@@ -1,0 +1,32 @@
+{
+  "schema_version": "1",
+  "project": "vllm-serving-benchmark-t4",
+  "git_sha": "8b134502",
+  "created_at": "2026-11-04T11:00:00-08:00",
+  "artefacts": {
+    "image": {
+      "ref": "kaggle-venv-py312-vllm==0.6.6.post1",
+      "digest": null,
+      "dockerfile": null,
+      "runs_as_uid": null
+    },
+    "model": {
+      "id": "Qwen/Qwen2.5-0.5B-Instruct",
+      "revision": "as recorded in results.json / CSV model_revision",
+      "weights_digest": null
+    },
+    "config_hash": null,
+    "data_hash": null
+  },
+  "evaluation": {
+    "command": "Kaggle notebook vllm-serving-benchmark-t4",
+    "report": "BENCHMARK.md + PROTOCOL.md + results.json + benchmark_results.csv",
+    "gates": "tests/test_results_schema.py",
+    "result": "pass"
+  },
+  "limits": {
+    "live_cluster_apply": false,
+    "ci_enabled": false,
+    "notes": "Single-run exploratory on 2xT4. Not multi-seed. image digest is venv id string in CSV, not a registry sha256."
+  }
+}
