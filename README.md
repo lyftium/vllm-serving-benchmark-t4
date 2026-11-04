@@ -23,7 +23,7 @@ Measured study of continuous batching, online concurrency, AWQ vs FP16, tensor p
 2. [`benchmark_results.csv`](./benchmark_results.csv) — flat rows (run_id, model, concurrency, ttft/e2e p95, tok/s, quality, notes)
 3. [`BENCHMARK.md`](./BENCHMARK.md) — short reading guide
 
-Do **not** invent digits beyond these files. Do **not** extrapolate to LLaVA, Safran clusters, or multi-node production SLOs.
+Do **not** invent digits beyond these files. Do **not** extrapolate to LLaVA, customer clusters, or multi-node production SLOs.
 
 ## What the numbers support in conversation
 
