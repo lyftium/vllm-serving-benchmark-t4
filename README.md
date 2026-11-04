@@ -5,8 +5,9 @@ Measured study of continuous batching, online concurrency, AWQ vs FP16, tensor p
 | | |
 |---|---|
 | **Problem** | Serving levers change throughput and latency together; slides without a fixed protocol are not defensible. |
-| **Verify** | `results.json` + `benchmark_results.csv` from one Kaggle campaign (vLLM `0.6.6.post1`, Python 3.12, ~20 min wall). |
-| **Status** | Single-run exploratory. Not multi-seed. Not a customer cluster. Small instruct models only (Qwen2.5 0.5B / 1.5B). |
+| **Verify** | `results.json` + `benchmark_results.csv` from one Kaggle campaign (vLLM `0.6.6.post1`, Python 3.12, ~20 min wall). Schema: `pytest -q tests/`. |
+| **CI-ready** | Manifest in [`ci/github-actions-ci.yml`](ci/github-actions-ci.yml); enable with `bash scripts/install-github-actions.sh` once `workflow` scope is granted. |
+| **Status** | Single-run exploratory. Not multi-seed. Not a customer cluster. Small instruct models only (Qwen2.5 0.5B / 1.5B). CI written, not enabled. |
 | **Notebook** | https://www.kaggle.com/code/lyftium/vllm-serving-benchmark-t4 |
 
 ## Protocol (what was fixed)

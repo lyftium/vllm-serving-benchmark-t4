@@ -1,0 +1,17 @@
+# CI-ready: copy into .github/workflows/ via scripts/install-github-actions.sh
+# once the repo token has `workflow` scope.
+name: ci
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  validate-artefacts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Schema tests (no GPU)
+        run: python -m pytest -q tests/

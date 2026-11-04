@@ -1,0 +1,12 @@
+[project]
+name = "vllm-serving-benchmark-t4"
+version = "0.1.0"
+description = "Measured vLLM serving study on 2x Tesla T4 (artefacts + schema tests)"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
