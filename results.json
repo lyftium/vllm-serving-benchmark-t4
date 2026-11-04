@@ -1,0 +1,3009 @@
+{
+  "environment": {
+    "python": "3.12.3",
+    "vllm": "0.6.6.post1",
+    "torch": "2.5.1+cu124",
+    "torch_cuda": "12.4",
+    "transformers": "4.47.1",
+    "xformers": "0.0.28.post3",
+    "gpu_count": 2,
+    "gpus": [
+      {
+        "name": "Tesla T4",
+        "capability": "7.5",
+        "total_mem_gib": 14.56
+      },
+      {
+        "name": "Tesla T4",
+        "capability": "7.5",
+        "total_mem_gib": 14.56
+      }
+    ],
+    "benchmark_python": "isolated uv venv (see 'python')",
+    "notebook_kernel_python": "3.13.16",
+    "nvidia_smi": [
+      "Tesla T4, 580.178.04, 15360 MiB",
+      "Tesla T4, 580.178.04, 15360 MiB"
+    ]
+  },
+  "vllm_install_spec": "vllm==0.6.6.post1",
+  "experiments": {
+    "a_offline_batching": {
+      "model": "Qwen/Qwen2.5-0.5B-Instruct",
+      "dtype": "half",
+      "rows": [
+        {
+          "config": {
+            "model": "Qwen/Qwen2.5-0.5B-Instruct",
+            "quantization": null,
+            "dtype": "half",
+            "tp": 1,
+            "max_num_seqs": 1,
+            "num_prompts": 32,
+            "max_tokens": 128,
+            "gpu_mem": 0.85,
+            "max_model_len": 2048,
+            "prefix_caching": false,
+            "shared_prefix": false,
+            "quality": false,
+            "out": "tmp_batch_mns1.json"
+          },
+          "load_seconds": 24.04,
+          "num_requests": 32,
+          "prompt_tokens": 1808,
+          "generated_tokens": 4096,
+          "elapsed_seconds": 28.345,
+          "generated_tokens_per_s": 144.5,
+          "total_tokens_per_s": 208.3,
+          "requests_per_s": 1.129,
+          "num_gpu_kv_blocks": 61519,
+          "torch_max_memory_allocated_gib_gpu0": 12.211,
+          "nvidia_smi_after_run": [
+            {
+              "gpu": 0,
+              "used_mib": 12845,
+              "total_mib": 15360
+            },
+            {
+              "gpu": 1,
+              "used_mib": 3,
+              "total_mib": 15360
+            }
+          ],
+          "weights_gib_from_log": 0.9276,
+          "gpu_blocks_from_log": 61519,
+          "tag": "batch_mns1",
+          "wall_including_startup_s": 60.6
+        },
+        {
+          "config": {
+            "model": "Qwen/Qwen2.5-0.5B-Instruct",
+            "quantization": null,
+            "dtype": "half",
+            "tp": 1,
+            "max_num_seqs": 8,
+            "num_prompts": 128,
+            "max_tokens": 128,
+            "gpu_mem": 0.85,
+            "max_model_len": 2048,
+            "prefix_caching": false,
+            "shared_prefix": false,
+            "quality": false,
+            "out": "tmp_batch_mns8.json"
+          },
+          "load_seconds": 19.74,
+          "num_requests": 128,
+          "prompt_tokens": 7254,
+          "generated_tokens": 16384,
+          "elapsed_seconds": 16.054,
+          "generated_tokens_per_s": 1020.5,
+          "total_tokens_per_s": 1472.4,
+          "requests_per_s": 7.973,
+          "num_gpu_kv_blocks": 61519,
+          "torch_max_memory_allocated_gib_gpu0": 12.23,
+          "nvidia_smi_after_run": [
+            {
+              "gpu": 0,
+              "used_mib": 12871,
+              "total_mib": 15360
+            },
+            {
+              "gpu": 1,
+              "used_mib": 3,
+              "total_mib": 15360
+            }
+          ],
+          "weights_gib_from_log": 0.9276,
+          "gpu_blocks_from_log": 61519,
+          "tag": "batch_mns8",
+          "wall_including_startup_s": 44.0
+        },
+        {
+          "config": {
+            "model": "Qwen/Qwen2.5-0.5B-Instruct",
+            "quantization": null,
+            "dtype": "half",
+            "tp": 1,
+            "max_num_seqs": 32,
+            "num_prompts": 128,
+            "max_tokens": 128,
+            "gpu_mem": 0.85,
+            "max_model_len": 2048,
+            "prefix_caching": false,
+            "shared_prefix": false,
+            "quality": false,
+            "out": "tmp_batch_mns32.json"
+          },
+          "load_seconds": 20.59,
+          "num_requests": 128,
+          "prompt_tokens": 7254,
+          "generated_tokens": 16384,
+          "elapsed_seconds": 6.032,
+          "generated_tokens_per_s": 2716.2,
+          "total_tokens_per_s": 3918.7,
+          "requests_per_s": 21.22,
+          "num_gpu_kv_blocks": 60616,
+          "torch_max_memory_allocated_gib_gpu0": 12.138,
+          "nvidia_smi_after_run": [
+            {
+              "gpu": 0,
+              "used_mib": 13385,
+              "total_mib": 15360
+            },
+            {
+              "gpu": 1,
+              "used_mib": 3,
+              "total_mib": 15360
+            }
+          ],
+          "weights_gib_from_log": 0.9276,
+          "gpu_blocks_from_log": 60616,
+          "tag": "batch_mns32",
+          "wall_including_startup_s": 35.0
+        },
+        {
+          "config": {
+            "model": "Qwen/Qwen2.5-0.5B-Instruct",
+            "quantization": null,
+            "dtype": "half",
+            "tp": 1,
+            "max_num_seqs": 128,
+            "num_prompts": 128,
+            "max_tokens": 128,
+            "gpu_mem": 0.85,
+            "max_model_len": 2048,
+            "prefix_caching": false,
+            "shared_prefix": false,
+            "quality": true,
+            "out": "tmp_batch_mns128.json"
+          },
+          "load_seconds": 26.31,
+          "num_requests": 128,
+          "prompt_tokens": 7254,
+          "generated_tokens": 16384,
+          "elapsed_seconds": 3.196,
+          "generated_tokens_per_s": 5126.4,
+          "total_tokens_per_s": 7396.1,
+          "requests_per_s": 40.05,
+          "num_gpu_kv_blocks": 58121,
+          "torch_max_memory_allocated_gib_gpu0": 11.913,
+          "nvidia_smi_after_run": [
+            {
+              "gpu": 0,
+              "used_mib": 13347,
+              "total_mib": 15360
+            },
+            {
+              "gpu": 1,
+              "used_mib": 3,
+              "total_mib": 15360
+            }
+          ],
+          "quality": {
+            "n": 50,
+            "exact_match": 0.92,
+            "arith_exact_match": 0.92,
+            "format_exact_match": 0.92,
+            "details": [
+              {
+                "prompt": "What is 66 + 24? Reply with only the number.",
+                "gold": "90",
+                "output": "90",
+                "correct": true
+              },
+              {
+                "prompt": "What is 10 + 21? Reply with only the number.",
+                "gold": "31",
+                "output": "31",
+                "correct": true
+              },
+              {
+                "prompt": "What is 84 + 14? Reply with only the number.",
+                "gold": "98",
+                "output": "98",
+                "correct": true
+              },
+              {
+                "prompt": "What is 95 + 98? Reply with only the number.",
+                "gold": "193",
+                "output": "193",
+                "correct": true
+              },
+              {
+                "prompt": "What is 20 + 22? Reply with only the number.",
+                "gold": "42",
+                "output": "42",
+                "correct": true
+              },
+              {
+                "prompt": "What is 55 + 40? Reply with only the number.",
+                "gold": "95",
+                "output": "95",
+                "correct": true
+              },
+              {
+                "prompt": "What is 12 + 13? Reply with only the number.",
+                "gold": "25",
+                "output": "25",
+                "correct": true
+              },
+              {
+                "prompt": "What is 12 + 54? Reply with only the number.",
+                "gold": "66",
+                "output": "66",
+                "correct": true
+              },
+              {
+                "prompt": "What is 92 + 89? Reply with only the number.",
+                "gold": "181",
+                "output": "181",
+                "correct": true
+              },
+              {
+                "prompt": "What is 71 + 88? Reply with only the number.",
+                "gold": "159",
+                "output": "159",
+                "correct": true
+              },
+              {
+                "prompt": "What is 69 + 29? Reply with only the number.",
+                "gold": "98",
+                "output": "98",
+                "correct": true
+              },
+              {
+                "prompt": "What is 21 + 33? Reply with only the number.",
+                "gold": "54",
+                "output": "54",
+                "correct": true
+              },
+              {
+                "prompt": "What is 24 + 11? Reply with only the number.",
+                "gold": "35",
+                "output": "35",
+                "correct": true
+              },
+              {
+                "prompt": "What is 74 + 72? Reply with only the number.",
+                "gold": "146",
+                "output": "146",
+                "correct": true
+              },
+              {
+                "prompt": "What is 41 + 18? Reply with only the number.",
+                "gold": "59",
+                "output": "59",
+                "correct": true
+              },
+              {
+                "prompt": "What is 95 + 79? Reply with only the number.",
+                "gold": "174",
+                "output": "174",
+                "correct": true
+              },
+              {
+                "prompt": "What is 69 + 18? Reply with only the number.",
+                "gold": "87",
+                "output": "87",
+                "correct": true
+              },
+              {
+                "prompt": "What is 86 + 96? Reply with only the number.",
+                "gold": "182",
+                "output": "182",
+                "correct": true
+              },
+              {
+                "prompt": "What is 21 + 75? Reply with only the number.",
+                "gold": "96",
+                "output": "96",
+                "correct": true
+              },
+              {
+                "prompt": "What is 84 + 15? Reply with only the number.",
+                "gold": "99",
+                "output": "99",
+                "correct": true
+              },
+              {
+                "prompt": "What is 44 + 81? Reply with only the number.",
+                "gold": "125",
+                "output": "125",
+                "correct": true
+              },
+              {
+                "prompt": "What is 18 + 92? Reply with only the number.",
+                "gold": "110",
+                "output": "200",
+                "correct": false
+              },
+              {
+                "prompt": "What is 48 + 71? Reply with only the number.",
+                "gold": "119",
+                "output": "119",
+                "correct": true
+              },
+              {
+                "prompt": "What is 55 + 44? Reply with only the number.",
+                "gold": "99",
+                "output": "100",
+                "correct": false
+              },
+              {
+                "prompt": "What is 41 + 93? Reply with only the number.",
+                "gold": "134",
+                "output": "134",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'engine' in uppercase letters, nothing else.",
+                "gold": "ENGINE",
+                "output": "ENGINE",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'valve' in uppercase letters, nothing else.",
+                "gold": "VALVE",
+                "output": "VALVE",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'sensor' in uppercase letters, nothing else.",
+                "gold": "SENSOR",
+                "output": "SENSOR",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'gearbox' in uppercase letters, nothing else.",
+                "gold": "GEARBOX",
+                "output": "GEARBOX",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'turbine' in uppercase letters, nothing else.",
+                "gold": "TURBINE",
+                "output": "TURBINE",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'rotor' in uppercase letters, nothing else.",
+                "gold": "ROTOR",
+                "output": "ROTOR",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'filter' in uppercase letters, nothing else.",
+                "gold": "FILTER",
+                "output": "FILTER",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'bearing' in uppercase letters, nothing else.",
+                "gold": "BEARING",
+                "output": "BEARING",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'piston' in uppercase letters, nothing else.",
+                "gold": "PISTON",
+                "output": "PISTON",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'nozzle' in uppercase letters, nothing else.",
+                "gold": "NOZZLE",
+                "output": "NOZZLE",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'spring' in uppercase letters, nothing else.",
+                "gold": "SPRING",
+                "output": "SPRING",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'cable' in uppercase letters, nothing else.",
+                "gold": "CABLE",
+                "output": "CABLE",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'switch' in uppercase letters, nothing else.",
+                "gold": "SWITCH",
+                "output": "SWITCH",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'relay' in uppercase letters, nothing else.",
+                "gold": "RELAY",
+                "output": "RELAY",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'motor' in uppercase letters, nothing else.",
+                "gold": "MOTOR",
+                "output": "MOTOR",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'pump' in uppercase letters, nothing else.",
+                "gold": "PUMP",
+                "output": "PUMP",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'shaft' in uppercase letters, nothing else.",
+                "gold": "SHAFT",
+                "output": "SHAFT",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'clutch' in uppercase letters, nothing else.",
+                "gold": "CLUTCH",
+                "output": "CLUTCH",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'brake' in uppercase letters, nothing else.",
+                "gold": "BRAKE",
+                "output": "BRKE",
+                "correct": false
+              },
+              {
+                "prompt": "Reply with only the word 'wheel' in uppercase letters, nothing else.",
+                "gold": "WHEEL",
+                "output": "WHEEL",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'flange' in uppercase letters, nothing else.",
+                "gold": "FLANGE",
+                "output": "FLANGE",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'gasket' in uppercase letters, nothing else.",
+                "gold": "GASKET",
+                "output": "GASKET",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'bolt' in uppercase letters, nothing else.",
+                "gold": "BOLT",
+                "output": "BOLT",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'frame' in uppercase letters, nothing else.",
+                "gold": "FRAME",
+                "output": "Framed Frame",
+                "correct": false
+              },
+              {
+                "prompt": "Reply with only the word 'hinge' in uppercase letters, nothing else.",
+                "gold": "HINGE",
+                "output": "HINGE",
+                "correct": true
+              }
+            ]
+          },
+          "weights_gib_from_log": 0.9276,
+          "gpu_blocks_from_log": 58121,
+          "tag": "batch_mns128",
+          "wall_including_startup_s": 37.8
+        }
+      ]
+    },
+    "b_online_fp16_0.5B": {
+      "model": "Qwen/Qwen2.5-0.5B-Instruct",
+      "max_tokens": 128,
+      "levels": [
+        {
+          "concurrency": 1,
+          "num_requests": 16,
+          "errors": 0,
+          "wall_seconds": 14.531,
+          "output_tokens": 2048,
+          "output_tokens_per_s": 140.9,
+          "requests_per_s": 1.101,
+          "ttft_ms": {
+            "p50": 39.02,
+            "p95": 45.2,
+            "mean": 39.9
+          },
+          "itl_ms": {
+            "p50": 6.85,
+            "p95": 7.24
+          },
+          "tpot_ms": {
+            "p50": 6.81,
+            "p95": 6.95
+          },
+          "e2e_ms": {
+            "p50": 904.57,
+            "p95": 923.89
+          },
+          "first_error": null
+        },
+        {
+          "concurrency": 4,
+          "num_requests": 16,
+          "errors": 0,
+          "wall_seconds": 3.861,
+          "output_tokens": 2048,
+          "output_tokens_per_s": 530.5,
+          "requests_per_s": 4.144,
+          "ttft_ms": {
+            "p50": 74.06,
+            "p95": 77.32,
+            "mean": 74.61
+          },
+          "itl_ms": {
+            "p50": 7.0,
+            "p95": 7.46
+          },
+          "tpot_ms": {
+            "p50": 6.99,
+            "p95": 7.08
+          },
+          "e2e_ms": {
+            "p50": 962.29,
+            "p95": 973.02
+          },
+          "first_error": null
+        },
+        {
+          "concurrency": 16,
+          "num_requests": 64,
+          "errors": 0,
+          "wall_seconds": 4.941,
+          "output_tokens": 8192,
+          "output_tokens_per_s": 1658.0,
+          "requests_per_s": 12.953,
+          "ttft_ms": {
+            "p50": 95.69,
+            "p95": 99.53,
+            "mean": 94.9
+          },
+          "itl_ms": {
+            "p50": 8.9,
+            "p95": 9.47
+          },
+          "tpot_ms": {
+            "p50": 8.96,
+            "p95": 9.0
+          },
+          "e2e_ms": {
+            "p50": 1233.93,
+            "p95": 1237.56
+          },
+          "first_error": null
+        },
+        {
+          "concurrency": 32,
+          "num_requests": 128,
+          "errors": 0,
+          "wall_seconds": 6.461,
+          "output_tokens": 16384,
+          "output_tokens_per_s": 2535.8,
+          "requests_per_s": 19.811,
+          "ttft_ms": {
+            "p50": 147.69,
+            "p95": 164.44,
+            "mean": 148.62
+          },
+          "itl_ms": {
+            "p50": 11.26,
+            "p95": 12.64
+          },
+          "tpot_ms": {
+            "p50": 11.51,
+            "p95": 11.63
+          },
+          "e2e_ms": {
+            "p50": 1605.94,
+            "p95": 1633.39
+          },
+          "first_error": null
+        }
+      ],
+      "tag": "fp16_05B",
+      "quantization": null,
+      "tensor_parallel_size": 1,
+      "server_startup_s": 42.1,
+      "nvidia_smi_used_mib_while_serving": [
+        12229,
+        3
+      ],
+      "weights_gib_from_log": 0.9276,
+      "gpu_blocks_from_log": 58121
+    },
+    "c_quantization_offline": {
+      "0.5B": {
+        "fp16_mns128": {
+          "config": {
+            "model": "Qwen/Qwen2.5-0.5B-Instruct",
+            "quantization": null,
+            "dtype": "half",
+            "tp": 1,
+            "max_num_seqs": 128,
+            "num_prompts": 128,
+            "max_tokens": 128,
+            "gpu_mem": 0.85,
+            "max_model_len": 2048,
+            "prefix_caching": false,
+            "shared_prefix": false,
+            "quality": true,
+            "out": "tmp_batch_mns128.json"
+          },
+          "load_seconds": 26.31,
+          "num_requests": 128,
+          "prompt_tokens": 7254,
+          "generated_tokens": 16384,
+          "elapsed_seconds": 3.196,
+          "generated_tokens_per_s": 5126.4,
+          "total_tokens_per_s": 7396.1,
+          "requests_per_s": 40.05,
+          "num_gpu_kv_blocks": 58121,
+          "torch_max_memory_allocated_gib_gpu0": 11.913,
+          "nvidia_smi_after_run": [
+            {
+              "gpu": 0,
+              "used_mib": 13347,
+              "total_mib": 15360
+            },
+            {
+              "gpu": 1,
+              "used_mib": 3,
+              "total_mib": 15360
+            }
+          ],
+          "quality": {
+            "n": 50,
+            "exact_match": 0.92,
+            "arith_exact_match": 0.92,
+            "format_exact_match": 0.92,
+            "details": [
+              {
+                "prompt": "What is 66 + 24? Reply with only the number.",
+                "gold": "90",
+                "output": "90",
+                "correct": true
+              },
+              {
+                "prompt": "What is 10 + 21? Reply with only the number.",
+                "gold": "31",
+                "output": "31",
+                "correct": true
+              },
+              {
+                "prompt": "What is 84 + 14? Reply with only the number.",
+                "gold": "98",
+                "output": "98",
+                "correct": true
+              },
+              {
+                "prompt": "What is 95 + 98? Reply with only the number.",
+                "gold": "193",
+                "output": "193",
+                "correct": true
+              },
+              {
+                "prompt": "What is 20 + 22? Reply with only the number.",
+                "gold": "42",
+                "output": "42",
+                "correct": true
+              },
+              {
+                "prompt": "What is 55 + 40? Reply with only the number.",
+                "gold": "95",
+                "output": "95",
+                "correct": true
+              },
+              {
+                "prompt": "What is 12 + 13? Reply with only the number.",
+                "gold": "25",
+                "output": "25",
+                "correct": true
+              },
+              {
+                "prompt": "What is 12 + 54? Reply with only the number.",
+                "gold": "66",
+                "output": "66",
+                "correct": true
+              },
+              {
+                "prompt": "What is 92 + 89? Reply with only the number.",
+                "gold": "181",
+                "output": "181",
+                "correct": true
+              },
+              {
+                "prompt": "What is 71 + 88? Reply with only the number.",
+                "gold": "159",
+                "output": "159",
+                "correct": true
+              },
+              {
+                "prompt": "What is 69 + 29? Reply with only the number.",
+                "gold": "98",
+                "output": "98",
+                "correct": true
+              },
+              {
+                "prompt": "What is 21 + 33? Reply with only the number.",
+                "gold": "54",
+                "output": "54",
+                "correct": true
+              },
+              {
+                "prompt": "What is 24 + 11? Reply with only the number.",
+                "gold": "35",
+                "output": "35",
+                "correct": true
+              },
+              {
+                "prompt": "What is 74 + 72? Reply with only the number.",
+                "gold": "146",
+                "output": "146",
+                "correct": true
+              },
+              {
+                "prompt": "What is 41 + 18? Reply with only the number.",
+                "gold": "59",
+                "output": "59",
+                "correct": true
+              },
+              {
+                "prompt": "What is 95 + 79? Reply with only the number.",
+                "gold": "174",
+                "output": "174",
+                "correct": true
+              },
+              {
+                "prompt": "What is 69 + 18? Reply with only the number.",
+                "gold": "87",
+                "output": "87",
+                "correct": true
+              },
+              {
+                "prompt": "What is 86 + 96? Reply with only the number.",
+                "gold": "182",
+                "output": "182",
+                "correct": true
+              },
+              {
+                "prompt": "What is 21 + 75? Reply with only the number.",
+                "gold": "96",
+                "output": "96",
+                "correct": true
+              },
+              {
+                "prompt": "What is 84 + 15? Reply with only the number.",
+                "gold": "99",
+                "output": "99",
+                "correct": true
+              },
+              {
+                "prompt": "What is 44 + 81? Reply with only the number.",
+                "gold": "125",
+                "output": "125",
+                "correct": true
+              },
+              {
+                "prompt": "What is 18 + 92? Reply with only the number.",
+                "gold": "110",
+                "output": "200",
+                "correct": false
+              },
+              {
+                "prompt": "What is 48 + 71? Reply with only the number.",
+                "gold": "119",
+                "output": "119",
+                "correct": true
+              },
+              {
+                "prompt": "What is 55 + 44? Reply with only the number.",
+                "gold": "99",
+                "output": "100",
+                "correct": false
+              },
+              {
+                "prompt": "What is 41 + 93? Reply with only the number.",
+                "gold": "134",
+                "output": "134",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'engine' in uppercase letters, nothing else.",
+                "gold": "ENGINE",
+                "output": "ENGINE",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'valve' in uppercase letters, nothing else.",
+                "gold": "VALVE",
+                "output": "VALVE",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'sensor' in uppercase letters, nothing else.",
+                "gold": "SENSOR",
+                "output": "SENSOR",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'gearbox' in uppercase letters, nothing else.",
+                "gold": "GEARBOX",
+                "output": "GEARBOX",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'turbine' in uppercase letters, nothing else.",
+                "gold": "TURBINE",
+                "output": "TURBINE",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'rotor' in uppercase letters, nothing else.",
+                "gold": "ROTOR",
+                "output": "ROTOR",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'filter' in uppercase letters, nothing else.",
+                "gold": "FILTER",
+                "output": "FILTER",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'bearing' in uppercase letters, nothing else.",
+                "gold": "BEARING",
+                "output": "BEARING",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'piston' in uppercase letters, nothing else.",
+                "gold": "PISTON",
+                "output": "PISTON",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'nozzle' in uppercase letters, nothing else.",
+                "gold": "NOZZLE",
+                "output": "NOZZLE",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'spring' in uppercase letters, nothing else.",
+                "gold": "SPRING",
+                "output": "SPRING",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'cable' in uppercase letters, nothing else.",
+                "gold": "CABLE",
+                "output": "CABLE",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'switch' in uppercase letters, nothing else.",
+                "gold": "SWITCH",
+                "output": "SWITCH",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'relay' in uppercase letters, nothing else.",
+                "gold": "RELAY",
+                "output": "RELAY",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'motor' in uppercase letters, nothing else.",
+                "gold": "MOTOR",
+                "output": "MOTOR",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'pump' in uppercase letters, nothing else.",
+                "gold": "PUMP",
+                "output": "PUMP",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'shaft' in uppercase letters, nothing else.",
+                "gold": "SHAFT",
+                "output": "SHAFT",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'clutch' in uppercase letters, nothing else.",
+                "gold": "CLUTCH",
+                "output": "CLUTCH",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'brake' in uppercase letters, nothing else.",
+                "gold": "BRAKE",
+                "output": "BRKE",
+                "correct": false
+              },
+              {
+                "prompt": "Reply with only the word 'wheel' in uppercase letters, nothing else.",
+                "gold": "WHEEL",
+                "output": "WHEEL",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'flange' in uppercase letters, nothing else.",
+                "gold": "FLANGE",
+                "output": "FLANGE",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'gasket' in uppercase letters, nothing else.",
+                "gold": "GASKET",
+                "output": "GASKET",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'bolt' in uppercase letters, nothing else.",
+                "gold": "BOLT",
+                "output": "BOLT",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'frame' in uppercase letters, nothing else.",
+                "gold": "FRAME",
+                "output": "Framed Frame",
+                "correct": false
+              },
+              {
+                "prompt": "Reply with only the word 'hinge' in uppercase letters, nothing else.",
+                "gold": "HINGE",
+                "output": "HINGE",
+                "correct": true
+              }
+            ]
+          },
+          "weights_gib_from_log": 0.9276,
+          "gpu_blocks_from_log": 58121,
+          "tag": "batch_mns128",
+          "wall_including_startup_s": 37.8
+        },
+        "fp16_mns1": {
+          "config": {
+            "model": "Qwen/Qwen2.5-0.5B-Instruct",
+            "quantization": null,
+            "dtype": "half",
+            "tp": 1,
+            "max_num_seqs": 1,
+            "num_prompts": 32,
+            "max_tokens": 128,
+            "gpu_mem": 0.85,
+            "max_model_len": 2048,
+            "prefix_caching": false,
+            "shared_prefix": false,
+            "quality": false,
+            "out": "tmp_batch_mns1.json"
+          },
+          "load_seconds": 24.04,
+          "num_requests": 32,
+          "prompt_tokens": 1808,
+          "generated_tokens": 4096,
+          "elapsed_seconds": 28.345,
+          "generated_tokens_per_s": 144.5,
+          "total_tokens_per_s": 208.3,
+          "requests_per_s": 1.129,
+          "num_gpu_kv_blocks": 61519,
+          "torch_max_memory_allocated_gib_gpu0": 12.211,
+          "nvidia_smi_after_run": [
+            {
+              "gpu": 0,
+              "used_mib": 12845,
+              "total_mib": 15360
+            },
+            {
+              "gpu": 1,
+              "used_mib": 3,
+              "total_mib": 15360
+            }
+          ],
+          "weights_gib_from_log": 0.9276,
+          "gpu_blocks_from_log": 61519,
+          "tag": "batch_mns1",
+          "wall_including_startup_s": 60.6
+        },
+        "awq_mns1": {
+          "config": {
+            "model": "Qwen/Qwen2.5-0.5B-Instruct-AWQ",
+            "quantization": "awq",
+            "dtype": "half",
+            "tp": 1,
+            "max_num_seqs": 1,
+            "num_prompts": 32,
+            "max_tokens": 128,
+            "gpu_mem": 0.85,
+            "max_model_len": 2048,
+            "prefix_caching": false,
+            "shared_prefix": false,
+            "quality": false,
+            "out": "tmp_awq05_mns1.json"
+          },
+          "load_seconds": 26.96,
+          "num_requests": 32,
+          "prompt_tokens": 1808,
+          "generated_tokens": 4096,
+          "elapsed_seconds": 24.811,
+          "generated_tokens_per_s": 165.1,
+          "total_tokens_per_s": 238.0,
+          "requests_per_s": 1.29,
+          "num_gpu_kv_blocks": 64309,
+          "torch_max_memory_allocated_gib_gpu0": 12.225,
+          "nvidia_smi_after_run": [
+            {
+              "gpu": 0,
+              "used_mib": 12823,
+              "total_mib": 15360
+            },
+            {
+              "gpu": 1,
+              "used_mib": 3,
+              "total_mib": 15360
+            }
+          ],
+          "weights_gib_from_log": 0.4311,
+          "gpu_blocks_from_log": 64309,
+          "tag": "awq05_mns1",
+          "wall_including_startup_s": 60.1
+        },
+        "awq_mns128": {
+          "config": {
+            "model": "Qwen/Qwen2.5-0.5B-Instruct-AWQ",
+            "quantization": "awq",
+            "dtype": "half",
+            "tp": 1,
+            "max_num_seqs": 128,
+            "num_prompts": 128,
+            "max_tokens": 128,
+            "gpu_mem": 0.85,
+            "max_model_len": 2048,
+            "prefix_caching": false,
+            "shared_prefix": false,
+            "quality": true,
+            "out": "tmp_awq05_mns128.json"
+          },
+          "load_seconds": 26.24,
+          "num_requests": 128,
+          "prompt_tokens": 7254,
+          "generated_tokens": 16384,
+          "elapsed_seconds": 5.28,
+          "generated_tokens_per_s": 3102.7,
+          "total_tokens_per_s": 4476.5,
+          "requests_per_s": 24.24,
+          "num_gpu_kv_blocks": 60958,
+          "torch_max_memory_allocated_gib_gpu0": 11.928,
+          "nvidia_smi_after_run": [
+            {
+              "gpu": 0,
+              "used_mib": 13387,
+              "total_mib": 15360
+            },
+            {
+              "gpu": 1,
+              "used_mib": 3,
+              "total_mib": 15360
+            }
+          ],
+          "quality": {
+            "n": 50,
+            "exact_match": 0.72,
+            "arith_exact_match": 0.56,
+            "format_exact_match": 0.88,
+            "details": [
+              {
+                "prompt": "What is 66 + 24? Reply with only the number.",
+                "gold": "90",
+                "output": "90",
+                "correct": true
+              },
+              {
+                "prompt": "What is 10 + 21? Reply with only the number.",
+                "gold": "31",
+                "output": "11",
+                "correct": false
+              },
+              {
+                "prompt": "What is 84 + 14? Reply with only the number.",
+                "gold": "98",
+                "output": "98",
+                "correct": true
+              },
+              {
+                "prompt": "What is 95 + 98? Reply with only the number.",
+                "gold": "193",
+                "output": "183",
+                "correct": false
+              },
+              {
+                "prompt": "What is 20 + 22? Reply with only the number.",
+                "gold": "42",
+                "output": "42",
+                "correct": true
+              },
+              {
+                "prompt": "What is 55 + 40? Reply with only the number.",
+                "gold": "95",
+                "output": "95",
+                "correct": true
+              },
+              {
+                "prompt": "What is 12 + 13? Reply with only the number.",
+                "gold": "25",
+                "output": "12 + 13 = 25",
+                "correct": false
+              },
+              {
+                "prompt": "What is 12 + 54? Reply with only the number.",
+                "gold": "66",
+                "output": "17",
+                "correct": false
+              },
+              {
+                "prompt": "What is 92 + 89? Reply with only the number.",
+                "gold": "181",
+                "output": "181",
+                "correct": true
+              },
+              {
+                "prompt": "What is 71 + 88? Reply with only the number.",
+                "gold": "159",
+                "output": "159",
+                "correct": true
+              },
+              {
+                "prompt": "What is 69 + 29? Reply with only the number.",
+                "gold": "98",
+                "output": "99",
+                "correct": false
+              },
+              {
+                "prompt": "What is 21 + 33? Reply with only the number.",
+                "gold": "54",
+                "output": "54",
+                "correct": true
+              },
+              {
+                "prompt": "What is 24 + 11? Reply with only the number.",
+                "gold": "35",
+                "output": "24 + 11 = 35",
+                "correct": false
+              },
+              {
+                "prompt": "What is 74 + 72? Reply with only the number.",
+                "gold": "146",
+                "output": "146",
+                "correct": true
+              },
+              {
+                "prompt": "What is 41 + 18? Reply with only the number.",
+                "gold": "59",
+                "output": "51",
+                "correct": false
+              },
+              {
+                "prompt": "What is 95 + 79? Reply with only the number.",
+                "gold": "174",
+                "output": "174",
+                "correct": true
+              },
+              {
+                "prompt": "What is 69 + 18? Reply with only the number.",
+                "gold": "87",
+                "output": "87",
+                "correct": true
+              },
+              {
+                "prompt": "What is 86 + 96? Reply with only the number.",
+                "gold": "182",
+                "output": "182",
+                "correct": true
+              },
+              {
+                "prompt": "What is 21 + 75? Reply with only the number.",
+                "gold": "96",
+                "output": "96",
+                "correct": true
+              },
+              {
+                "prompt": "What is 84 + 15? Reply with only the number.",
+                "gold": "99",
+                "output": "99",
+                "correct": true
+              },
+              {
+                "prompt": "What is 44 + 81? Reply with only the number.",
+                "gold": "125",
+                "output": "55",
+                "correct": false
+              },
+              {
+                "prompt": "What is 18 + 92? Reply with only the number.",
+                "gold": "110",
+                "output": "20",
+                "correct": false
+              },
+              {
+                "prompt": "What is 48 + 71? Reply with only the number.",
+                "gold": "119",
+                "output": "109",
+                "correct": false
+              },
+              {
+                "prompt": "What is 55 + 44? Reply with only the number.",
+                "gold": "99",
+                "output": "99",
+                "correct": true
+              },
+              {
+                "prompt": "What is 41 + 93? Reply with only the number.",
+                "gold": "134",
+                "output": "54",
+                "correct": false
+              },
+              {
+                "prompt": "Reply with only the word 'engine' in uppercase letters, nothing else.",
+                "gold": "ENGINE",
+                "output": "ENGINE",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'valve' in uppercase letters, nothing else.",
+                "gold": "VALVE",
+                "output": "VALVE",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'sensor' in uppercase letters, nothing else.",
+                "gold": "SENSOR",
+                "output": "SENSOR",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'gearbox' in uppercase letters, nothing else.",
+                "gold": "GEARBOX",
+                "output": "GEARBOX",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'turbine' in uppercase letters, nothing else.",
+                "gold": "TURBINE",
+                "output": "TURBINE",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'rotor' in uppercase letters, nothing else.",
+                "gold": "ROTOR",
+                "output": "ROTOR",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'filter' in uppercase letters, nothing else.",
+                "gold": "FILTER",
+                "output": "FILTER",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'bearing' in uppercase letters, nothing else.",
+                "gold": "BEARING",
+                "output": "BEARING",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'piston' in uppercase letters, nothing else.",
+                "gold": "PISTON",
+                "output": "PISTON",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'nozzle' in uppercase letters, nothing else.",
+                "gold": "NOZZLE",
+                "output": "NOZZLE",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'spring' in uppercase letters, nothing else.",
+                "gold": "SPRING",
+                "output": "Spring",
+                "correct": false
+              },
+              {
+                "prompt": "Reply with only the word 'cable' in uppercase letters, nothing else.",
+                "gold": "CABLE",
+                "output": "CABLE",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'switch' in uppercase letters, nothing else.",
+                "gold": "SWITCH",
+                "output": "SWITCH",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'relay' in uppercase letters, nothing else.",
+                "gold": "RELAY",
+                "output": "RELAY",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'motor' in uppercase letters, nothing else.",
+                "gold": "MOTOR",
+                "output": "MOTOR",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'pump' in uppercase letters, nothing else.",
+                "gold": "PUMP",
+                "output": "PUMP",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'shaft' in uppercase letters, nothing else.",
+                "gold": "SHAFT",
+                "output": "SHAFT",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'clutch' in uppercase letters, nothing else.",
+                "gold": "CLUTCH",
+                "output": "CLUTCH",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'brake' in uppercase letters, nothing else.",
+                "gold": "BRAKE",
+                "output": "BRIDE",
+                "correct": false
+              },
+              {
+                "prompt": "Reply with only the word 'wheel' in uppercase letters, nothing else.",
+                "gold": "WHEEL",
+                "output": "WHEEL",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'flange' in uppercase letters, nothing else.",
+                "gold": "FLANGE",
+                "output": "FLANGE",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'gasket' in uppercase letters, nothing else.",
+                "gold": "GASKET",
+                "output": "GASKET",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'bolt' in uppercase letters, nothing else.",
+                "gold": "BOLT",
+                "output": "BOLT",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'frame' in uppercase letters, nothing else.",
+                "gold": "FRAME",
+                "output": "FRAME",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'hinge' in uppercase letters, nothing else.",
+                "gold": "HINGE",
+                "output": "Hinge",
+                "correct": false
+              }
+            ]
+          },
+          "weights_gib_from_log": 0.4311,
+          "gpu_blocks_from_log": 60958,
+          "tag": "awq05_mns128",
+          "wall_including_startup_s": 40.2
+        }
+      },
+      "1.5B": {
+        "fp16_mns1": {
+          "config": {
+            "model": "Qwen/Qwen2.5-1.5B-Instruct",
+            "quantization": null,
+            "dtype": "half",
+            "tp": 1,
+            "max_num_seqs": 1,
+            "num_prompts": 32,
+            "max_tokens": 128,
+            "gpu_mem": 0.85,
+            "max_model_len": 2048,
+            "prefix_caching": false,
+            "shared_prefix": false,
+            "quality": false,
+            "out": "tmp_fp16_15_mns1.json"
+          },
+          "load_seconds": 28.61,
+          "num_requests": 32,
+          "prompt_tokens": 1808,
+          "generated_tokens": 4096,
+          "elapsed_seconds": 77.651,
+          "generated_tokens_per_s": 52.7,
+          "total_tokens_per_s": 76.0,
+          "requests_per_s": 0.412,
+          "num_gpu_kv_blocks": 21432,
+          "torch_max_memory_allocated_gib_gpu0": 12.064,
+          "nvidia_smi_after_run": [
+            {
+              "gpu": 0,
+              "used_mib": 12787,
+              "total_mib": 15360
+            },
+            {
+              "gpu": 1,
+              "used_mib": 3,
+              "total_mib": 15360
+            }
+          ],
+          "weights_gib_from_log": 2.8875,
+          "gpu_blocks_from_log": 21432,
+          "tag": "fp16_15_mns1",
+          "wall_including_startup_s": 114.7
+        },
+        "fp16_mns128": {
+          "config": {
+            "model": "Qwen/Qwen2.5-1.5B-Instruct",
+            "quantization": null,
+            "dtype": "half",
+            "tp": 1,
+            "max_num_seqs": 128,
+            "num_prompts": 128,
+            "max_tokens": 128,
+            "gpu_mem": 0.85,
+            "max_model_len": 2048,
+            "prefix_caching": false,
+            "shared_prefix": false,
+            "quality": true,
+            "out": "tmp_fp16_15_mns128.json"
+          },
+          "load_seconds": 28.17,
+          "num_requests": 128,
+          "prompt_tokens": 7254,
+          "generated_tokens": 16384,
+          "elapsed_seconds": 6.593,
+          "generated_tokens_per_s": 2485.1,
+          "total_tokens_per_s": 3585.3,
+          "requests_per_s": 19.415,
+          "num_gpu_kv_blocks": 20105,
+          "torch_max_memory_allocated_gib_gpu0": 11.819,
+          "nvidia_smi_after_run": [
+            {
+              "gpu": 0,
+              "used_mib": 13359,
+              "total_mib": 15360
+            },
+            {
+              "gpu": 1,
+              "used_mib": 3,
+              "total_mib": 15360
+            }
+          ],
+          "quality": {
+            "n": 50,
+            "exact_match": 0.98,
+            "arith_exact_match": 1.0,
+            "format_exact_match": 0.96,
+            "details": [
+              {
+                "prompt": "What is 66 + 24? Reply with only the number.",
+                "gold": "90",
+                "output": "90",
+                "correct": true
+              },
+              {
+                "prompt": "What is 10 + 21? Reply with only the number.",
+                "gold": "31",
+                "output": "31",
+                "correct": true
+              },
+              {
+                "prompt": "What is 84 + 14? Reply with only the number.",
+                "gold": "98",
+                "output": "98",
+                "correct": true
+              },
+              {
+                "prompt": "What is 95 + 98? Reply with only the number.",
+                "gold": "193",
+                "output": "193",
+                "correct": true
+              },
+              {
+                "prompt": "What is 20 + 22? Reply with only the number.",
+                "gold": "42",
+                "output": "42",
+                "correct": true
+              },
+              {
+                "prompt": "What is 55 + 40? Reply with only the number.",
+                "gold": "95",
+                "output": "95",
+                "correct": true
+              },
+              {
+                "prompt": "What is 12 + 13? Reply with only the number.",
+                "gold": "25",
+                "output": "25",
+                "correct": true
+              },
+              {
+                "prompt": "What is 12 + 54? Reply with only the number.",
+                "gold": "66",
+                "output": "66",
+                "correct": true
+              },
+              {
+                "prompt": "What is 92 + 89? Reply with only the number.",
+                "gold": "181",
+                "output": "181",
+                "correct": true
+              },
+              {
+                "prompt": "What is 71 + 88? Reply with only the number.",
+                "gold": "159",
+                "output": "159",
+                "correct": true
+              },
+              {
+                "prompt": "What is 69 + 29? Reply with only the number.",
+                "gold": "98",
+                "output": "98",
+                "correct": true
+              },
+              {
+                "prompt": "What is 21 + 33? Reply with only the number.",
+                "gold": "54",
+                "output": "54",
+                "correct": true
+              },
+              {
+                "prompt": "What is 24 + 11? Reply with only the number.",
+                "gold": "35",
+                "output": "35",
+                "correct": true
+              },
+              {
+                "prompt": "What is 74 + 72? Reply with only the number.",
+                "gold": "146",
+                "output": "146",
+                "correct": true
+              },
+              {
+                "prompt": "What is 41 + 18? Reply with only the number.",
+                "gold": "59",
+                "output": "59",
+                "correct": true
+              },
+              {
+                "prompt": "What is 95 + 79? Reply with only the number.",
+                "gold": "174",
+                "output": "174",
+                "correct": true
+              },
+              {
+                "prompt": "What is 69 + 18? Reply with only the number.",
+                "gold": "87",
+                "output": "87",
+                "correct": true
+              },
+              {
+                "prompt": "What is 86 + 96? Reply with only the number.",
+                "gold": "182",
+                "output": "182",
+                "correct": true
+              },
+              {
+                "prompt": "What is 21 + 75? Reply with only the number.",
+                "gold": "96",
+                "output": "96",
+                "correct": true
+              },
+              {
+                "prompt": "What is 84 + 15? Reply with only the number.",
+                "gold": "99",
+                "output": "99",
+                "correct": true
+              },
+              {
+                "prompt": "What is 44 + 81? Reply with only the number.",
+                "gold": "125",
+                "output": "125",
+                "correct": true
+              },
+              {
+                "prompt": "What is 18 + 92? Reply with only the number.",
+                "gold": "110",
+                "output": "110",
+                "correct": true
+              },
+              {
+                "prompt": "What is 48 + 71? Reply with only the number.",
+                "gold": "119",
+                "output": "119",
+                "correct": true
+              },
+              {
+                "prompt": "What is 55 + 44? Reply with only the number.",
+                "gold": "99",
+                "output": "99",
+                "correct": true
+              },
+              {
+                "prompt": "What is 41 + 93? Reply with only the number.",
+                "gold": "134",
+                "output": "134",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'engine' in uppercase letters, nothing else.",
+                "gold": "ENGINE",
+                "output": "ENGINE",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'valve' in uppercase letters, nothing else.",
+                "gold": "VALVE",
+                "output": "VALVE",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'sensor' in uppercase letters, nothing else.",
+                "gold": "SENSOR",
+                "output": "SENSOR",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'gearbox' in uppercase letters, nothing else.",
+                "gold": "GEARBOX",
+                "output": "GEARBOX",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'turbine' in uppercase letters, nothing else.",
+                "gold": "TURBINE",
+                "output": "TURBINE",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'rotor' in uppercase letters, nothing else.",
+                "gold": "ROTOR",
+                "output": "ROTOR",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'filter' in uppercase letters, nothing else.",
+                "gold": "FILTER",
+                "output": "FILTER",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'bearing' in uppercase letters, nothing else.",
+                "gold": "BEARING",
+                "output": "Bearing",
+                "correct": false
+              },
+              {
+                "prompt": "Reply with only the word 'piston' in uppercase letters, nothing else.",
+                "gold": "PISTON",
+                "output": "PISTON",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'nozzle' in uppercase letters, nothing else.",
+                "gold": "NOZZLE",
+                "output": "NOZZLE",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'spring' in uppercase letters, nothing else.",
+                "gold": "SPRING",
+                "output": "SPRING",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'cable' in uppercase letters, nothing else.",
+                "gold": "CABLE",
+                "output": "CABLE",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'switch' in uppercase letters, nothing else.",
+                "gold": "SWITCH",
+                "output": "SWITCH",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'relay' in uppercase letters, nothing else.",
+                "gold": "RELAY",
+                "output": "RELAY",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'motor' in uppercase letters, nothing else.",
+                "gold": "MOTOR",
+                "output": "MOTOR",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'pump' in uppercase letters, nothing else.",
+                "gold": "PUMP",
+                "output": "PUMP",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'shaft' in uppercase letters, nothing else.",
+                "gold": "SHAFT",
+                "output": "SHAFT",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'clutch' in uppercase letters, nothing else.",
+                "gold": "CLUTCH",
+                "output": "CLUTCH",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'brake' in uppercase letters, nothing else.",
+                "gold": "BRAKE",
+                "output": "BRAKE",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'wheel' in uppercase letters, nothing else.",
+                "gold": "WHEEL",
+                "output": "WHEEL",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'flange' in uppercase letters, nothing else.",
+                "gold": "FLANGE",
+                "output": "FLANGE",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'gasket' in uppercase letters, nothing else.",
+                "gold": "GASKET",
+                "output": "GASKET",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'bolt' in uppercase letters, nothing else.",
+                "gold": "BOLT",
+                "output": "BOLT",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'frame' in uppercase letters, nothing else.",
+                "gold": "FRAME",
+                "output": "FRAME",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'hinge' in uppercase letters, nothing else.",
+                "gold": "HINGE",
+                "output": "HINGE",
+                "correct": true
+              }
+            ]
+          },
+          "weights_gib_from_log": 2.8875,
+          "gpu_blocks_from_log": 20105,
+          "tag": "fp16_15_mns128",
+          "wall_including_startup_s": 44.1
+        },
+        "awq_mns1": {
+          "config": {
+            "model": "Qwen/Qwen2.5-1.5B-Instruct-AWQ",
+            "quantization": "awq",
+            "dtype": "half",
+            "tp": 1,
+            "max_num_seqs": 1,
+            "num_prompts": 32,
+            "max_tokens": 128,
+            "gpu_mem": 0.85,
+            "max_model_len": 2048,
+            "prefix_caching": false,
+            "shared_prefix": false,
+            "quality": false,
+            "out": "tmp_awq15_mns1.json"
+          },
+          "load_seconds": 35.51,
+          "num_requests": 32,
+          "prompt_tokens": 1808,
+          "generated_tokens": 4096,
+          "elapsed_seconds": 48.191,
+          "generated_tokens_per_s": 85.0,
+          "total_tokens_per_s": 122.5,
+          "requests_per_s": 0.664,
+          "num_gpu_kv_blocks": 25850,
+          "torch_max_memory_allocated_gib_gpu0": 12.174,
+          "nvidia_smi_after_run": [
+            {
+              "gpu": 0,
+              "used_mib": 12747,
+              "total_mib": 15360
+            },
+            {
+              "gpu": 1,
+              "used_mib": 3,
+              "total_mib": 15360
+            }
+          ],
+          "weights_gib_from_log": 1.1008,
+          "gpu_blocks_from_log": 25850,
+          "tag": "awq15_mns1",
+          "wall_including_startup_s": 92.3
+        },
+        "awq_mns128": {
+          "config": {
+            "model": "Qwen/Qwen2.5-1.5B-Instruct-AWQ",
+            "quantization": "awq",
+            "dtype": "half",
+            "tp": 1,
+            "max_num_seqs": 128,
+            "num_prompts": 128,
+            "max_tokens": 128,
+            "gpu_mem": 0.85,
+            "max_model_len": 2048,
+            "prefix_caching": false,
+            "shared_prefix": false,
+            "quality": true,
+            "out": "tmp_awq15_mns128.json"
+          },
+          "load_seconds": 27.42,
+          "num_requests": 128,
+          "prompt_tokens": 7254,
+          "generated_tokens": 16384,
+          "elapsed_seconds": 13.241,
+          "generated_tokens_per_s": 1237.3,
+          "total_tokens_per_s": 1785.2,
+          "requests_per_s": 9.667,
+          "num_gpu_kv_blocks": 24580,
+          "torch_max_memory_allocated_gib_gpu0": 11.937,
+          "nvidia_smi_after_run": [
+            {
+              "gpu": 0,
+              "used_mib": 13453,
+              "total_mib": 15360
+            },
+            {
+              "gpu": 1,
+              "used_mib": 3,
+              "total_mib": 15360
+            }
+          ],
+          "quality": {
+            "n": 50,
+            "exact_match": 0.94,
+            "arith_exact_match": 1.0,
+            "format_exact_match": 0.88,
+            "details": [
+              {
+                "prompt": "What is 66 + 24? Reply with only the number.",
+                "gold": "90",
+                "output": "90",
+                "correct": true
+              },
+              {
+                "prompt": "What is 10 + 21? Reply with only the number.",
+                "gold": "31",
+                "output": "31",
+                "correct": true
+              },
+              {
+                "prompt": "What is 84 + 14? Reply with only the number.",
+                "gold": "98",
+                "output": "98",
+                "correct": true
+              },
+              {
+                "prompt": "What is 95 + 98? Reply with only the number.",
+                "gold": "193",
+                "output": "193",
+                "correct": true
+              },
+              {
+                "prompt": "What is 20 + 22? Reply with only the number.",
+                "gold": "42",
+                "output": "42",
+                "correct": true
+              },
+              {
+                "prompt": "What is 55 + 40? Reply with only the number.",
+                "gold": "95",
+                "output": "95",
+                "correct": true
+              },
+              {
+                "prompt": "What is 12 + 13? Reply with only the number.",
+                "gold": "25",
+                "output": "25",
+                "correct": true
+              },
+              {
+                "prompt": "What is 12 + 54? Reply with only the number.",
+                "gold": "66",
+                "output": "66",
+                "correct": true
+              },
+              {
+                "prompt": "What is 92 + 89? Reply with only the number.",
+                "gold": "181",
+                "output": "181",
+                "correct": true
+              },
+              {
+                "prompt": "What is 71 + 88? Reply with only the number.",
+                "gold": "159",
+                "output": "159",
+                "correct": true
+              },
+              {
+                "prompt": "What is 69 + 29? Reply with only the number.",
+                "gold": "98",
+                "output": "98",
+                "correct": true
+              },
+              {
+                "prompt": "What is 21 + 33? Reply with only the number.",
+                "gold": "54",
+                "output": "54",
+                "correct": true
+              },
+              {
+                "prompt": "What is 24 + 11? Reply with only the number.",
+                "gold": "35",
+                "output": "35",
+                "correct": true
+              },
+              {
+                "prompt": "What is 74 + 72? Reply with only the number.",
+                "gold": "146",
+                "output": "146",
+                "correct": true
+              },
+              {
+                "prompt": "What is 41 + 18? Reply with only the number.",
+                "gold": "59",
+                "output": "59",
+                "correct": true
+              },
+              {
+                "prompt": "What is 95 + 79? Reply with only the number.",
+                "gold": "174",
+                "output": "174",
+                "correct": true
+              },
+              {
+                "prompt": "What is 69 + 18? Reply with only the number.",
+                "gold": "87",
+                "output": "87",
+                "correct": true
+              },
+              {
+                "prompt": "What is 86 + 96? Reply with only the number.",
+                "gold": "182",
+                "output": "182",
+                "correct": true
+              },
+              {
+                "prompt": "What is 21 + 75? Reply with only the number.",
+                "gold": "96",
+                "output": "96",
+                "correct": true
+              },
+              {
+                "prompt": "What is 84 + 15? Reply with only the number.",
+                "gold": "99",
+                "output": "99",
+                "correct": true
+              },
+              {
+                "prompt": "What is 44 + 81? Reply with only the number.",
+                "gold": "125",
+                "output": "125",
+                "correct": true
+              },
+              {
+                "prompt": "What is 18 + 92? Reply with only the number.",
+                "gold": "110",
+                "output": "110",
+                "correct": true
+              },
+              {
+                "prompt": "What is 48 + 71? Reply with only the number.",
+                "gold": "119",
+                "output": "119",
+                "correct": true
+              },
+              {
+                "prompt": "What is 55 + 44? Reply with only the number.",
+                "gold": "99",
+                "output": "99",
+                "correct": true
+              },
+              {
+                "prompt": "What is 41 + 93? Reply with only the number.",
+                "gold": "134",
+                "output": "134",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'engine' in uppercase letters, nothing else.",
+                "gold": "ENGINE",
+                "output": "ENGINE",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'valve' in uppercase letters, nothing else.",
+                "gold": "VALVE",
+                "output": "VALVE",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'sensor' in uppercase letters, nothing else.",
+                "gold": "SENSOR",
+                "output": "SENSOR",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'gearbox' in uppercase letters, nothing else.",
+                "gold": "GEARBOX",
+                "output": "GEARBOX",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'turbine' in uppercase letters, nothing else.",
+                "gold": "TURBINE",
+                "output": "TURBINE",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'rotor' in uppercase letters, nothing else.",
+                "gold": "ROTOR",
+                "output": "ROTOR",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'filter' in uppercase letters, nothing else.",
+                "gold": "FILTER",
+                "output": "FILTER",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'bearing' in uppercase letters, nothing else.",
+                "gold": "BEARING",
+                "output": "Bearing",
+                "correct": false
+              },
+              {
+                "prompt": "Reply with only the word 'piston' in uppercase letters, nothing else.",
+                "gold": "PISTON",
+                "output": "PISTON",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'nozzle' in uppercase letters, nothing else.",
+                "gold": "NOZZLE",
+                "output": "NOZZLE",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'spring' in uppercase letters, nothing else.",
+                "gold": "SPRING",
+                "output": "SPRING",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'cable' in uppercase letters, nothing else.",
+                "gold": "CABLE",
+                "output": "CABLE",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'switch' in uppercase letters, nothing else.",
+                "gold": "SWITCH",
+                "output": "SWITCH",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'relay' in uppercase letters, nothing else.",
+                "gold": "RELAY",
+                "output": "RELAY",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'motor' in uppercase letters, nothing else.",
+                "gold": "MOTOR",
+                "output": "MOTOR",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'pump' in uppercase letters, nothing else.",
+                "gold": "PUMP",
+                "output": "PUMP",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'shaft' in uppercase letters, nothing else.",
+                "gold": "SHAFT",
+                "output": "SHAFT",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'clutch' in uppercase letters, nothing else.",
+                "gold": "CLUTCH",
+                "output": "CLUTCH",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'brake' in uppercase letters, nothing else.",
+                "gold": "BRAKE",
+                "output": "BRACE",
+                "correct": false
+              },
+              {
+                "prompt": "Reply with only the word 'wheel' in uppercase letters, nothing else.",
+                "gold": "WHEEL",
+                "output": "WHEEL",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'flange' in uppercase letters, nothing else.",
+                "gold": "FLANGE",
+                "output": "FLANGE",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'gasket' in uppercase letters, nothing else.",
+                "gold": "GASKET",
+                "output": "GASKET",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'bolt' in uppercase letters, nothing else.",
+                "gold": "BOLT",
+                "output": "BOLT",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'frame' in uppercase letters, nothing else.",
+                "gold": "FRAME",
+                "output": "FRAME",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'hinge' in uppercase letters, nothing else.",
+                "gold": "HINGE",
+                "output": "Hinge",
+                "correct": false
+              }
+            ]
+          },
+          "weights_gib_from_log": 1.1008,
+          "gpu_blocks_from_log": 24580,
+          "tag": "awq15_mns128",
+          "wall_including_startup_s": 50.0
+        }
+      }
+    },
+    "c_online_awq_0.5B": {
+      "model": "Qwen/Qwen2.5-0.5B-Instruct-AWQ",
+      "max_tokens": 128,
+      "levels": [
+        {
+          "concurrency": 1,
+          "num_requests": 16,
+          "errors": 0,
+          "wall_seconds": 12.366,
+          "output_tokens": 2048,
+          "output_tokens_per_s": 165.6,
+          "requests_per_s": 1.294,
+          "ttft_ms": {
+            "p50": 41.02,
+            "p95": 48.02,
+            "mean": 42.11
+          },
+          "itl_ms": {
+            "p50": 5.76,
+            "p95": 6.1
+          },
+          "tpot_ms": {
+            "p50": 5.72,
+            "p95": 5.86
+          },
+          "e2e_ms": {
+            "p50": 769.41,
+            "p95": 791.75
+          },
+          "first_error": null
+        },
+        {
+          "concurrency": 4,
+          "num_requests": 16,
+          "errors": 0,
+          "wall_seconds": 3.385,
+          "output_tokens": 2048,
+          "output_tokens_per_s": 605.0,
+          "requests_per_s": 4.726,
+          "ttft_ms": {
+            "p50": 79.61,
+            "p95": 81.62,
+            "mean": 79.66
+          },
+          "itl_ms": {
+            "p50": 6.01,
+            "p95": 6.55
+          },
+          "tpot_ms": {
+            "p50": 6.04,
+            "p95": 6.07
+          },
+          "e2e_ms": {
+            "p50": 844.73,
+            "p95": 852.82
+          },
+          "first_error": null
+        },
+        {
+          "concurrency": 16,
+          "num_requests": 64,
+          "errors": 0,
+          "wall_seconds": 4.812,
+          "output_tokens": 8192,
+          "output_tokens_per_s": 1702.6,
+          "requests_per_s": 13.301,
+          "ttft_ms": {
+            "p50": 103.33,
+            "p95": 108.79,
+            "mean": 103.81
+          },
+          "itl_ms": {
+            "p50": 8.49,
+            "p95": 9.7
+          },
+          "tpot_ms": {
+            "p50": 8.62,
+            "p95": 8.7
+          },
+          "e2e_ms": {
+            "p50": 1199.67,
+            "p95": 1206.95
+          },
+          "first_error": null
+        },
+        {
+          "concurrency": 32,
+          "num_requests": 128,
+          "errors": 0,
+          "wall_seconds": 7.318,
+          "output_tokens": 16384,
+          "output_tokens_per_s": 2239.0,
+          "requests_per_s": 17.492,
+          "ttft_ms": {
+            "p50": 176.35,
+            "p95": 188.24,
+            "mean": 175.53
+          },
+          "itl_ms": {
+            "p50": 12.69,
+            "p95": 14.26
+          },
+          "tpot_ms": {
+            "p50": 12.97,
+            "p95": 13.14
+          },
+          "e2e_ms": {
+            "p50": 1825.72,
+            "p95": 1835.3
+          },
+          "first_error": null
+        }
+      ],
+      "tag": "awq_05B",
+      "quantization": "awq",
+      "tensor_parallel_size": 1,
+      "server_startup_s": 39.0,
+      "nvidia_smi_used_mib_while_serving": [
+        12249,
+        3
+      ],
+      "weights_gib_from_log": 0.4311,
+      "gpu_blocks_from_log": 60958
+    },
+    "d_tensor_parallel": {
+      "model": "Qwen/Qwen2.5-0.5B-Instruct",
+      "offline": {
+        "tp1_mns128": {
+          "config": {
+            "model": "Qwen/Qwen2.5-0.5B-Instruct",
+            "quantization": null,
+            "dtype": "half",
+            "tp": 1,
+            "max_num_seqs": 128,
+            "num_prompts": 128,
+            "max_tokens": 128,
+            "gpu_mem": 0.85,
+            "max_model_len": 2048,
+            "prefix_caching": false,
+            "shared_prefix": false,
+            "quality": true,
+            "out": "tmp_batch_mns128.json"
+          },
+          "load_seconds": 26.31,
+          "num_requests": 128,
+          "prompt_tokens": 7254,
+          "generated_tokens": 16384,
+          "elapsed_seconds": 3.196,
+          "generated_tokens_per_s": 5126.4,
+          "total_tokens_per_s": 7396.1,
+          "requests_per_s": 40.05,
+          "num_gpu_kv_blocks": 58121,
+          "torch_max_memory_allocated_gib_gpu0": 11.913,
+          "nvidia_smi_after_run": [
+            {
+              "gpu": 0,
+              "used_mib": 13347,
+              "total_mib": 15360
+            },
+            {
+              "gpu": 1,
+              "used_mib": 3,
+              "total_mib": 15360
+            }
+          ],
+          "quality": {
+            "n": 50,
+            "exact_match": 0.92,
+            "arith_exact_match": 0.92,
+            "format_exact_match": 0.92,
+            "details": [
+              {
+                "prompt": "What is 66 + 24? Reply with only the number.",
+                "gold": "90",
+                "output": "90",
+                "correct": true
+              },
+              {
+                "prompt": "What is 10 + 21? Reply with only the number.",
+                "gold": "31",
+                "output": "31",
+                "correct": true
+              },
+              {
+                "prompt": "What is 84 + 14? Reply with only the number.",
+                "gold": "98",
+                "output": "98",
+                "correct": true
+              },
+              {
+                "prompt": "What is 95 + 98? Reply with only the number.",
+                "gold": "193",
+                "output": "193",
+                "correct": true
+              },
+              {
+                "prompt": "What is 20 + 22? Reply with only the number.",
+                "gold": "42",
+                "output": "42",
+                "correct": true
+              },
+              {
+                "prompt": "What is 55 + 40? Reply with only the number.",
+                "gold": "95",
+                "output": "95",
+                "correct": true
+              },
+              {
+                "prompt": "What is 12 + 13? Reply with only the number.",
+                "gold": "25",
+                "output": "25",
+                "correct": true
+              },
+              {
+                "prompt": "What is 12 + 54? Reply with only the number.",
+                "gold": "66",
+                "output": "66",
+                "correct": true
+              },
+              {
+                "prompt": "What is 92 + 89? Reply with only the number.",
+                "gold": "181",
+                "output": "181",
+                "correct": true
+              },
+              {
+                "prompt": "What is 71 + 88? Reply with only the number.",
+                "gold": "159",
+                "output": "159",
+                "correct": true
+              },
+              {
+                "prompt": "What is 69 + 29? Reply with only the number.",
+                "gold": "98",
+                "output": "98",
+                "correct": true
+              },
+              {
+                "prompt": "What is 21 + 33? Reply with only the number.",
+                "gold": "54",
+                "output": "54",
+                "correct": true
+              },
+              {
+                "prompt": "What is 24 + 11? Reply with only the number.",
+                "gold": "35",
+                "output": "35",
+                "correct": true
+              },
+              {
+                "prompt": "What is 74 + 72? Reply with only the number.",
+                "gold": "146",
+                "output": "146",
+                "correct": true
+              },
+              {
+                "prompt": "What is 41 + 18? Reply with only the number.",
+                "gold": "59",
+                "output": "59",
+                "correct": true
+              },
+              {
+                "prompt": "What is 95 + 79? Reply with only the number.",
+                "gold": "174",
+                "output": "174",
+                "correct": true
+              },
+              {
+                "prompt": "What is 69 + 18? Reply with only the number.",
+                "gold": "87",
+                "output": "87",
+                "correct": true
+              },
+              {
+                "prompt": "What is 86 + 96? Reply with only the number.",
+                "gold": "182",
+                "output": "182",
+                "correct": true
+              },
+              {
+                "prompt": "What is 21 + 75? Reply with only the number.",
+                "gold": "96",
+                "output": "96",
+                "correct": true
+              },
+              {
+                "prompt": "What is 84 + 15? Reply with only the number.",
+                "gold": "99",
+                "output": "99",
+                "correct": true
+              },
+              {
+                "prompt": "What is 44 + 81? Reply with only the number.",
+                "gold": "125",
+                "output": "125",
+                "correct": true
+              },
+              {
+                "prompt": "What is 18 + 92? Reply with only the number.",
+                "gold": "110",
+                "output": "200",
+                "correct": false
+              },
+              {
+                "prompt": "What is 48 + 71? Reply with only the number.",
+                "gold": "119",
+                "output": "119",
+                "correct": true
+              },
+              {
+                "prompt": "What is 55 + 44? Reply with only the number.",
+                "gold": "99",
+                "output": "100",
+                "correct": false
+              },
+              {
+                "prompt": "What is 41 + 93? Reply with only the number.",
+                "gold": "134",
+                "output": "134",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'engine' in uppercase letters, nothing else.",
+                "gold": "ENGINE",
+                "output": "ENGINE",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'valve' in uppercase letters, nothing else.",
+                "gold": "VALVE",
+                "output": "VALVE",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'sensor' in uppercase letters, nothing else.",
+                "gold": "SENSOR",
+                "output": "SENSOR",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'gearbox' in uppercase letters, nothing else.",
+                "gold": "GEARBOX",
+                "output": "GEARBOX",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'turbine' in uppercase letters, nothing else.",
+                "gold": "TURBINE",
+                "output": "TURBINE",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'rotor' in uppercase letters, nothing else.",
+                "gold": "ROTOR",
+                "output": "ROTOR",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'filter' in uppercase letters, nothing else.",
+                "gold": "FILTER",
+                "output": "FILTER",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'bearing' in uppercase letters, nothing else.",
+                "gold": "BEARING",
+                "output": "BEARING",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'piston' in uppercase letters, nothing else.",
+                "gold": "PISTON",
+                "output": "PISTON",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'nozzle' in uppercase letters, nothing else.",
+                "gold": "NOZZLE",
+                "output": "NOZZLE",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'spring' in uppercase letters, nothing else.",
+                "gold": "SPRING",
+                "output": "SPRING",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'cable' in uppercase letters, nothing else.",
+                "gold": "CABLE",
+                "output": "CABLE",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'switch' in uppercase letters, nothing else.",
+                "gold": "SWITCH",
+                "output": "SWITCH",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'relay' in uppercase letters, nothing else.",
+                "gold": "RELAY",
+                "output": "RELAY",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'motor' in uppercase letters, nothing else.",
+                "gold": "MOTOR",
+                "output": "MOTOR",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'pump' in uppercase letters, nothing else.",
+                "gold": "PUMP",
+                "output": "PUMP",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'shaft' in uppercase letters, nothing else.",
+                "gold": "SHAFT",
+                "output": "SHAFT",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'clutch' in uppercase letters, nothing else.",
+                "gold": "CLUTCH",
+                "output": "CLUTCH",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'brake' in uppercase letters, nothing else.",
+                "gold": "BRAKE",
+                "output": "BRKE",
+                "correct": false
+              },
+              {
+                "prompt": "Reply with only the word 'wheel' in uppercase letters, nothing else.",
+                "gold": "WHEEL",
+                "output": "WHEEL",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'flange' in uppercase letters, nothing else.",
+                "gold": "FLANGE",
+                "output": "FLANGE",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'gasket' in uppercase letters, nothing else.",
+                "gold": "GASKET",
+                "output": "GASKET",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'bolt' in uppercase letters, nothing else.",
+                "gold": "BOLT",
+                "output": "BOLT",
+                "correct": true
+              },
+              {
+                "prompt": "Reply with only the word 'frame' in uppercase letters, nothing else.",
+                "gold": "FRAME",
+                "output": "Framed Frame",
+                "correct": false
+              },
+              {
+                "prompt": "Reply with only the word 'hinge' in uppercase letters, nothing else.",
+                "gold": "HINGE",
+                "output": "HINGE",
+                "correct": true
+              }
+            ]
+          },
+          "weights_gib_from_log": 0.9276,
+          "gpu_blocks_from_log": 58121,
+          "tag": "batch_mns128",
+          "wall_including_startup_s": 37.8
+        },
+        "tp2_mns128": {
+          "config": {
+            "model": "Qwen/Qwen2.5-0.5B-Instruct",
+            "quantization": null,
+            "dtype": "half",
+            "tp": 2,
+            "max_num_seqs": 128,
+            "num_prompts": 128,
+            "max_tokens": 128,
+            "gpu_mem": 0.85,
+            "max_model_len": 2048,
+            "prefix_caching": false,
+            "shared_prefix": false,
+            "quality": false,
+            "out": "tmp_tp2_mns128.json"
+          },
+          "load_seconds": 37.3,
+          "num_requests": 128,
+          "prompt_tokens": 7254,
+          "generated_tokens": 16384,
+          "elapsed_seconds": 3.722,
+          "generated_tokens_per_s": 4401.9,
+          "total_tokens_per_s": 6350.8,
+          "requests_per_s": 34.39,
+          "num_gpu_kv_blocks": 120561,
+          "torch_max_memory_allocated_gib_gpu0": 11.845,
+          "nvidia_smi_after_run": [
+            {
+              "gpu": 0,
+              "used_mib": 12797,
+              "total_mib": 15360
+            },
+            {
+              "gpu": 1,
+              "used_mib": 12367,
+              "total_mib": 15360
+            }
+          ],
+          "weights_gib_from_log": 0.4642,
+          "gpu_blocks_from_log": 120561,
+          "tag": "tp2_mns128",
+          "wall_including_startup_s": 51.5
+        },
+        "tp1_mns1": {
+          "config": {
+            "model": "Qwen/Qwen2.5-0.5B-Instruct",
+            "quantization": null,
+            "dtype": "half",
+            "tp": 1,
+            "max_num_seqs": 1,
+            "num_prompts": 32,
+            "max_tokens": 128,
+            "gpu_mem": 0.85,
+            "max_model_len": 2048,
+            "prefix_caching": false,
+            "shared_prefix": false,
+            "quality": false,
+            "out": "tmp_batch_mns1.json"
+          },
+          "load_seconds": 24.04,
+          "num_requests": 32,
+          "prompt_tokens": 1808,
+          "generated_tokens": 4096,
+          "elapsed_seconds": 28.345,
+          "generated_tokens_per_s": 144.5,
+          "total_tokens_per_s": 208.3,
+          "requests_per_s": 1.129,
+          "num_gpu_kv_blocks": 61519,
+          "torch_max_memory_allocated_gib_gpu0": 12.211,
+          "nvidia_smi_after_run": [
+            {
+              "gpu": 0,
+              "used_mib": 12845,
+              "total_mib": 15360
+            },
+            {
+              "gpu": 1,
+              "used_mib": 3,
+              "total_mib": 15360
+            }
+          ],
+          "weights_gib_from_log": 0.9276,
+          "gpu_blocks_from_log": 61519,
+          "tag": "batch_mns1",
+          "wall_including_startup_s": 60.6
+        },
+        "tp2_mns1": {
+          "config": {
+            "model": "Qwen/Qwen2.5-0.5B-Instruct",
+            "quantization": null,
+            "dtype": "half",
+            "tp": 2,
+            "max_num_seqs": 1,
+            "num_prompts": 32,
+            "max_tokens": 128,
+            "gpu_mem": 0.85,
+            "max_model_len": 2048,
+            "prefix_caching": false,
+            "shared_prefix": false,
+            "quality": false,
+            "out": "tmp_tp2_mns1.json"
+          },
+          "load_seconds": 24.94,
+          "num_requests": 32,
+          "prompt_tokens": 1808,
+          "generated_tokens": 4096,
+          "elapsed_seconds": 26.612,
+          "generated_tokens_per_s": 153.9,
+          "total_tokens_per_s": 221.9,
+          "requests_per_s": 1.202,
+          "num_gpu_kv_blocks": 127606,
+          "torch_max_memory_allocated_gib_gpu0": 12.165,
+          "nvidia_smi_after_run": [
+            {
+              "gpu": 0,
+              "used_mib": 12817,
+              "total_mib": 15360
+            },
+            {
+              "gpu": 1,
+              "used_mib": 12815,
+              "total_mib": 15360
+            }
+          ],
+          "weights_gib_from_log": 0.4642,
+          "gpu_blocks_from_log": 127606,
+          "tag": "tp2_mns1",
+          "wall_including_startup_s": 62.1
+        }
+      },
+      "online_tp2": {
+        "model": "Qwen/Qwen2.5-0.5B-Instruct",
+        "max_tokens": 128,
+        "levels": [
+          {
+            "concurrency": 1,
+            "num_requests": 16,
+            "errors": 0,
+            "wall_seconds": 13.378,
+            "output_tokens": 2048,
+            "output_tokens_per_s": 153.1,
+            "requests_per_s": 1.196,
+            "ttft_ms": {
+              "p50": 46.44,
+              "p95": 52.17,
+              "mean": 47.38
+            },
+            "itl_ms": {
+              "p50": 6.24,
+              "p95": 6.97
+            },
+            "tpot_ms": {
+              "p50": 6.17,
+              "p95": 6.48
+            },
+            "e2e_ms": {
+              "p50": 830.58,
+              "p95": 871.19
+            },
+            "first_error": null
+          },
+          {
+            "concurrency": 16,
+            "num_requests": 64,
+            "errors": 0,
+            "wall_seconds": 5.024,
+            "output_tokens": 8192,
+            "output_tokens_per_s": 1630.6,
+            "requests_per_s": 12.739,
+            "ttft_ms": {
+              "p50": 116.64,
+              "p95": 123.66,
+              "mean": 115.63
+            },
+            "itl_ms": {
+              "p50": 8.83,
+              "p95": 10.23
+            },
+            "tpot_ms": {
+              "p50": 8.93,
+              "p95": 9.16
+            },
+            "e2e_ms": {
+              "p50": 1254.04,
+              "p95": 1270.5
+            },
+            "first_error": null
+          }
+        ],
+        "tag": "tp2_05B",
+        "quantization": null,
+        "tensor_parallel_size": 2,
+        "server_startup_s": 48.0,
+        "nvidia_smi_used_mib_while_serving": [
+          12323,
+          12323
+        ],
+        "weights_gib_from_log": 0.4642,
+        "gpu_blocks_from_log": 120551
+      }
+    },
+    "e_prefix_caching": {
+      "off": {
+        "config": {
+          "model": "Qwen/Qwen2.5-0.5B-Instruct",
+          "quantization": null,
+          "dtype": "half",
+          "tp": 1,
+          "max_num_seqs": 128,
+          "num_prompts": 128,
+          "max_tokens": 32,
+          "gpu_mem": 0.85,
+          "max_model_len": 2048,
+          "prefix_caching": false,
+          "shared_prefix": true,
+          "quality": false,
+          "out": "tmp_prefix_off.json"
+        },
+        "load_seconds": 26.78,
+        "num_requests": 128,
+        "prompt_tokens": 130390,
+        "generated_tokens": 4096,
+        "elapsed_seconds": 8.959,
+        "generated_tokens_per_s": 457.2,
+        "total_tokens_per_s": 15010.9,
+        "requests_per_s": 14.287,
+        "num_gpu_kv_blocks": 58121,
+        "torch_max_memory_allocated_gib_gpu0": 11.913,
+        "nvidia_smi_after_run": [
+          {
+            "gpu": 0,
+            "used_mib": 13281,
+            "total_mib": 15360
+          },
+          {
+            "gpu": 1,
+            "used_mib": 3,
+            "total_mib": 15360
+          }
+        ],
+        "weights_gib_from_log": 0.9276,
+        "gpu_blocks_from_log": 58121,
+        "tag": "prefix_off",
+        "wall_including_startup_s": 44.2
+      },
+      "on": {
+        "config": {
+          "model": "Qwen/Qwen2.5-0.5B-Instruct",
+          "quantization": null,
+          "dtype": "half",
+          "tp": 1,
+          "max_num_seqs": 128,
+          "num_prompts": 128,
+          "max_tokens": 32,
+          "gpu_mem": 0.85,
+          "max_model_len": 2048,
+          "prefix_caching": true,
+          "shared_prefix": true,
+          "quality": false,
+          "out": "tmp_prefix_on.json"
+        },
+        "load_seconds": 27.33,
+        "num_requests": 128,
+        "prompt_tokens": 130390,
+        "generated_tokens": 4096,
+        "elapsed_seconds": 5.56,
+        "generated_tokens_per_s": 736.7,
+        "total_tokens_per_s": 24189.3,
+        "requests_per_s": 23.023,
+        "num_gpu_kv_blocks": 58121,
+        "torch_max_memory_allocated_gib_gpu0": 11.913,
+        "nvidia_smi_after_run": [
+          {
+            "gpu": 0,
+            "used_mib": 13251,
+            "total_mib": 15360
+          },
+          {
+            "gpu": 1,
+            "used_mib": 3,
+            "total_mib": 15360
+          }
+        ],
+        "weights_gib_from_log": 0.9276,
+        "gpu_blocks_from_log": 58121,
+        "tag": "prefix_on",
+        "wall_including_startup_s": 41.4
+      }
+    }
+  },
+  "failures": [],
+  "skipped": [
+    "gpu_memory_utilization / KV-cache size sweep (not run: workload never exhausts KV cache for these model sizes)"
+  ],
+  "total_runtime_min": 19.9,
+  "derived_observations": [
+    "Batching: max_num_seqs=128 gives 35.5x the generated tokens/s of max_num_seqs=1 (144.5 -> 5126.4 tok/s) on the same GPU and model.",
+    "Online fp16 0.5B: concurrency 1 -> 32 raises output tok/s 140.9 -> 2535.8 while p50 ITL goes 6.85 -> 11.26 ms and p95 TTFT 45.2 -> 164.44 ms.",
+    "0.5B mns1: AWQ/fp16 throughput ratio = 1.14 (144.5 vs 165.1 tok/s).",
+    "0.5B mns128: AWQ/fp16 throughput ratio = 0.61 (5126.4 vs 3102.7 tok/s).",
+    "0.5B: weights 0.9276 GiB (fp16) vs 0.4311 GiB (AWQ); KV blocks 58121 vs 60958; exact match 0.92 vs 0.72 on 50 prompts.",
+    "1.5B mns1: AWQ/fp16 throughput ratio = 1.61 (52.7 vs 85.0 tok/s).",
+    "1.5B mns128: AWQ/fp16 throughput ratio = 0.50 (2485.1 vs 1237.3 tok/s).",
+    "1.5B: weights 2.8875 GiB (fp16) vs 1.1008 GiB (AWQ); KV blocks 20105 vs 24580; exact match 0.98 vs 0.94 on 50 prompts.",
+    "TP=2 vs TP=1 offline mns128: 0.86x (5126.4 vs 4401.9 tok/s). TP=2 is slower here: the model is too small for the PCIe all-reduce cost to pay off.",
+    "TP=2 vs TP=1 offline mns1: 1.07x (144.5 vs 153.9 tok/s). TP=2 is faster here.",
+    "Prefix caching: requests/s 14.287 (off) -> 23.023 (on), 1.61x, with a shared system prompt."
+  ]
+}
