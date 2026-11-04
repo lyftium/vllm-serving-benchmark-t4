@@ -1,0 +1,21 @@
+run_id,commit,image_digest,model_revision,gpu,input_tokens,output_tokens,concurrency,ttft_p95_ms,e2e_p95_ms,tokens_per_second,error_rate,quality_score,notes
+online_fp16_c1,kaggle-v2,kaggle-venv-py312-vllm==0.6.6.post1,Qwen/Qwen2.5-0.5B-Instruct,2xTesla T4,~113/req (bench prompts),128,1,45.2,923.89,140.9,0.0,,online serving; single-run; measured on Kaggle 2xT4
+online_fp16_c4,kaggle-v2,kaggle-venv-py312-vllm==0.6.6.post1,Qwen/Qwen2.5-0.5B-Instruct,2xTesla T4,~113/req (bench prompts),128,4,77.32,973.02,530.5,0.0,,online serving; single-run; measured on Kaggle 2xT4
+online_fp16_c16,kaggle-v2,kaggle-venv-py312-vllm==0.6.6.post1,Qwen/Qwen2.5-0.5B-Instruct,2xTesla T4,~113/req (bench prompts),128,16,99.53,1237.56,1658.0,0.0,,online serving; single-run; measured on Kaggle 2xT4
+online_fp16_c32,kaggle-v2,kaggle-venv-py312-vllm==0.6.6.post1,Qwen/Qwen2.5-0.5B-Instruct,2xTesla T4,~113/req (bench prompts),128,32,164.44,1633.39,2535.8,0.0,,online serving; single-run; measured on Kaggle 2xT4
+online_awq_c1,kaggle-v2,kaggle-venv-py312-vllm==0.6.6.post1,Qwen/Qwen2.5-0.5B-Instruct-AWQ,2xTesla T4,~113/req (bench prompts),128,1,48.02,791.75,165.6,0.0,,AWQ online; same protocol as fp16
+online_awq_c4,kaggle-v2,kaggle-venv-py312-vllm==0.6.6.post1,Qwen/Qwen2.5-0.5B-Instruct-AWQ,2xTesla T4,~113/req (bench prompts),128,4,81.62,852.82,605.0,0.0,,AWQ online; same protocol as fp16
+online_awq_c16,kaggle-v2,kaggle-venv-py312-vllm==0.6.6.post1,Qwen/Qwen2.5-0.5B-Instruct-AWQ,2xTesla T4,~113/req (bench prompts),128,16,108.79,1206.95,1702.6,0.0,,AWQ online; same protocol as fp16
+online_awq_c32,kaggle-v2,kaggle-venv-py312-vllm==0.6.6.post1,Qwen/Qwen2.5-0.5B-Instruct-AWQ,2xTesla T4,~113/req (bench prompts),128,32,188.24,1835.3,2239.0,0.0,,AWQ online; same protocol as fp16
+offline_batch_mns1,kaggle-v2,kaggle-venv-py312-vllm==0.6.6.post1,Qwen/Qwen2.5-0.5B-Instruct,2xTesla T4 (TP=1),1808,128,1,,,144.5,0,,offline Throughput; elapsed_s=28.345
+offline_batch_mns8,kaggle-v2,kaggle-venv-py312-vllm==0.6.6.post1,Qwen/Qwen2.5-0.5B-Instruct,2xTesla T4 (TP=1),7254,128,8,,,1020.5,0,,offline Throughput; elapsed_s=16.054
+offline_batch_mns32,kaggle-v2,kaggle-venv-py312-vllm==0.6.6.post1,Qwen/Qwen2.5-0.5B-Instruct,2xTesla T4 (TP=1),7254,128,32,,,2716.2,0,,offline Throughput; elapsed_s=6.032
+offline_batch_mns128,kaggle-v2,kaggle-venv-py312-vllm==0.6.6.post1,Qwen/Qwen2.5-0.5B-Instruct,2xTesla T4 (TP=1),7254,128,128,,,5126.4,0,,offline Throughput; elapsed_s=3.196
+offline_quant_fp16_mns128,kaggle-v2,kaggle-venv-py312-vllm==0.6.6.post1,Qwen/Qwen2.5-0.5B-Instruct,2xTesla T4,7254,128,128,,,5126.4,0,0.92,quant=None; n=50 exact_match
+offline_quant_awq_mns128,kaggle-v2,kaggle-venv-py312-vllm==0.6.6.post1,Qwen/Qwen2.5-0.5B-Instruct-AWQ,2xTesla T4,7254,128,128,,,3102.7,0,0.72,quant=awq; n=50 exact_match
+offline_tp1_mns128,kaggle-v2,kaggle-venv-py312-vllm==0.6.6.post1,Qwen/Qwen2.5-0.5B-Instruct,2xTesla T4 (TP=1),7254,128,128,,,5126.4,0,0.92,TP comparison; small model — TP=2 not always faster
+offline_tp2_mns128,kaggle-v2,kaggle-venv-py312-vllm==0.6.6.post1,Qwen/Qwen2.5-0.5B-Instruct,2xTesla T4 (TP=2),7254,128,128,,,4401.9,0,,TP comparison; small model — TP=2 not always faster
+offline_tp1_mns1,kaggle-v2,kaggle-venv-py312-vllm==0.6.6.post1,Qwen/Qwen2.5-0.5B-Instruct,2xTesla T4 (TP=1),1808,128,1,,,144.5,0,,TP comparison; small model — TP=2 not always faster
+offline_tp2_mns1,kaggle-v2,kaggle-venv-py312-vllm==0.6.6.post1,Qwen/Qwen2.5-0.5B-Instruct,2xTesla T4 (TP=2),1808,128,1,,,153.9,0,,TP comparison; small model — TP=2 not always faster
+prefix_off,kaggle-v2,kaggle-venv-py312-vllm==0.6.6.post1,Qwen/Qwen2.5-0.5B-Instruct,2xTesla T4,130390,32,128,,,457.2,0,,prefix_caching=False; shared_prefix; req/s=14.287
+prefix_on,kaggle-v2,kaggle-venv-py312-vllm==0.6.6.post1,Qwen/Qwen2.5-0.5B-Instruct,2xTesla T4,130390,32,128,,,736.7,0,,prefix_caching=True; shared_prefix; req/s=23.023
