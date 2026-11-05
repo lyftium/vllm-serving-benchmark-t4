@@ -12,6 +12,10 @@ Measured study of continuous batching, online concurrency, AWQ vs FP16, tensor p
 | **Status** | Single-run exploratory. Not multi-seed. Not a customer cluster. Small instruct models only (Qwen2.5 0.5B / 1.5B). CI **enabled** on `main` (see badge). |
 | **Notebook** | https://www.kaggle.com/code/lyftium/vllm-serving-benchmark-t4 |
 
+## Integrator signals
+
+This study is for **serving trade-offs under a fixed protocol**, not a customer SLO claim: continuous batching vs single-seq, AWQ vs FP16 (quality moves with tok/s), tensor parallel on small models over PCIe, prefix caching when prompts share a prefix. Read [`PROTOCOL.md`](PROTOCOL.md) before quoting numbers.
+
 ## Protocol (what was fixed)
 
 - Hardware: 2× Tesla T4 (compute 7.5), Kaggle GPU session
