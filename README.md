@@ -11,6 +11,7 @@ Measured study of continuous batching, online concurrency, AWQ vs FP16, tensor p
 | **CI** | ![CI](https://github.com/lyftium/vllm-serving-benchmark-t4/actions/workflows/ci.yml/badge.svg) — workflow live under [`.github/workflows/ci.yml`](.github/workflows/ci.yml) |
 | **Status** | Single-run exploratory. Not multi-seed. Not a customer cluster. Small instruct models only (Qwen2.5 0.5B / 1.5B). CI **enabled** on `main` (see badge). |
 | **Notebook** | https://www.kaggle.com/code/lyftium/vllm-serving-benchmark-t4 |
+| **Serving path** | Measurement lab only. Cluster front door: [agent-gateway-stack](https://github.com/lyftium/agent-gateway-stack). KServe packaging: [drawing-review-service](https://github.com/lyftium/drawing-review-service) `deploy/kserve/`. |
 
 ## Integrator signals
 
