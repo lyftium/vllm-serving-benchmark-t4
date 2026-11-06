@@ -2,19 +2,19 @@
 
 ![CI](https://github.com/lyftium/vllm-serving-benchmark-t4/actions/workflows/ci.yml/badge.svg)
 
-Which serving knobs actually move throughput and latency on commodity GPUs? This is one measured campaign: continuous batching, online concurrency, AWQ vs fp16, tensor parallel, and prefix caching.
+One measured campaign of serving levers on commodity GPUs.
 
-**Start here:** [`docs/DEMO.md`](docs/DEMO.md) · [`results.json`](./results.json) · [`benchmark_results.csv`](./benchmark_results.csv) · [`PROTOCOL.md`](PROTOCOL.md).
+**Headline (single run, from [`results.json`](./results.json)):** continuous batching on Qwen2.5-0.5B fp16 raised generated tok/s **~35.5×** — `max_num_seqs` 1 → 128 (144.5 → 5126.4 tok/s) on the same GPU. Online concurrency 1 → 32: 140.9 → 2535.8 tok/s with p95 TTFT 45 → 164 ms. AWQ vs fp16 and TP trade off quality / memory / throughput depending on batch size — see derived observations in the file.
 
-vLLM `0.6.6.post1` (V0), Python 3.12, Qwen2.5 0.5B / 1.5B (fp16 + AWQ), 2× Tesla T4 on Kaggle. One run per configuration — not multi-seed, not a customer SLO, not a cluster deploy.
+[`docs/DEMO.md`](docs/DEMO.md) · [`results.json`](./results.json) · [`benchmark_results.csv`](./benchmark_results.csv) · [`PROTOCOL.md`](PROTOCOL.md)
+
+vLLM `0.6.6.post1` (V0) · Python 3.12 · Qwen2.5 0.5B / 1.5B (fp16 + AWQ) · 2× Tesla T4 on Kaggle. **One run per configuration** — not multi-seed, not a customer SLO, not a cluster deploy.
 
 Notebook: [kaggle.com/code/lyftium/vllm-serving-benchmark-t4](https://www.kaggle.com/code/lyftium/vllm-serving-benchmark-t4)
 
-This repo is the measurement lab. The OpenAI-compatible front door is [agent-gateway-stack](https://github.com/lyftium/agent-gateway-stack). KServe packaging is in [drawing-review-service](https://github.com/lyftium/drawing-review-service) `deploy/kserve/`.
+Measurement lab only. Front door: [agent-gateway-stack](https://github.com/lyftium/agent-gateway-stack). KServe packaging: [drawing-review-service](https://github.com/lyftium/drawing-review-service) `deploy/kserve/`.
 
 ## Protocol
-
-What stayed fixed for the campaign:
 
 - Hardware — 2× Tesla T4 (compute 7.5), Kaggle GPU session
 - Engine — vLLM 0.6.6.post1 (V0), isolated Python 3.12 venv
@@ -24,18 +24,21 @@ What stayed fixed for the campaign:
 
 ## Reading the artefacts
 
-1. [`results.json`](./results.json) — raw campaign
+1. [`results.json`](./results.json) — raw campaign + `derived_observations`
 2. [`benchmark_results.csv`](./benchmark_results.csv) — flat rows
 3. [`BENCHMARK.md`](./BENCHMARK.md) — short reading guide
 
-Do not invent digits beyond these files. Do not extrapolate to larger VLMs, customer clusters, or multi-node SLOs.
+Quote only digits from these files. Do not extrapolate to larger VLMs, customer clusters, or multi-node SLOs.
 
-## What the numbers support in conversation
+## Selected observations (same campaign)
 
-- Continuous batching can dominate single-seq throughput on the same GPU
-- AWQ vs fp16 is not universally faster — quality and tok/s both move; measure both
-- Tensor parallel on a tiny model over PCIe can lose vs TP=1 at high batch
-- Prefix caching helped when prompts shared a system prefix in that setup
+From `derived_observations` in `results.json`:
+
+- Batching: **35.5×** tok/s at `max_num_seqs` 128 vs 1 (0.5B fp16)
+- Online fp16 0.5B: concurrency 1 → 32 raises tok/s ~18× while TTFT/ITL rise
+- AWQ vs fp16: faster at mns=1 on 1.5B (**1.61×**), slower at mns=128 (**0.50×**); exact-match drops on the probe set
+- TP=2 vs TP=1 at mns=128: **0.86×** (PCIe all-reduce not worth it on this tiny model)
+- Prefix caching with a shared system prompt: **1.61×** req/s (14.3 → 23.0)
 
 ## Reproduce
 
