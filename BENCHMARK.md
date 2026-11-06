@@ -1,6 +1,6 @@
 # Measured benchmark table (filled from `results.json`)
 
-Source run: Kaggle 2× Tesla T4, vLLM `0.6.6.post1`, notebook kernel Python 3.12, single campaign (~20 min wall).  
+Source run: Kaggle 2× Tesla T4, vLLM `0.6.6.post1`, single campaign (~20 min wall). `results.json` records the isolated benchmark interpreter as Python 3.12.3 and the notebook kernel as Python 3.13.16. Those are different environments.  
 **Honesty.** One measured campaign; not a multi-seed study; not a customer cluster; small instruct models only.
 
 Machine-readable: [`benchmark_results.csv`](./benchmark_results.csv) (columns aligned with a pack template: run_id, commit, image_digest, model_revision, gpu, tokens, concurrency, ttft/e2e p95, tok/s, error_rate, quality_score, notes).
