@@ -2,11 +2,11 @@
 
 ![CI](https://github.com/lyftium/vllm-serving-benchmark-t4/actions/workflows/ci.yml/badge.svg)
 
-Serving optimizations do not all move in the same direction as load changes. I recorded one exploratory vLLM campaign comparing continuous batching, AWQ, tensor parallelism, and prefix caching on two Tesla T4 GPUs. This repository preserves the raw measurements and their conditions; it is not a packaged benchmark harness.
+Serving optimizations do not all move in the same direction as load changes. I recorded one exploratory vLLM campaign comparing continuous batching, AWQ, tensor parallelism, and prefix caching on two Tesla T4 GPUs. This repository publishes the complete benchmark notebook, raw measurements, and their conditions.
 
 For Qwen2.5-1.5B-Instruct, AWQ throughput was **1.61× fp16 at one sequence** (85.0 vs 52.7 generated tokens/s) and **0.50× at 128 sequences** (1,237.3 vs 2,485.1). On a separate 50-probe quality check at 128 sequences, exact match was 0.94 for AWQ and 0.98 for fp16. These are single-run measurements, not universal quantization results.
 
-[Raw results](results.json) · [Flat CSV](benchmark_results.csv) · [Protocol](PROTOCOL.md) · [Inspection walkthrough](docs/DEMO.md)
+[Benchmark report](BENCHMARK.md) · [Raw results](results.json) · [Flat CSV](benchmark_results.csv) · [Benchmark notebook](notebooks/vllm-serving-benchmark-t4.ipynb) · [Protocol](PROTOCOL.md)
 
 ## Example
 
@@ -71,7 +71,7 @@ Expected: the schema checks pass. They validate artifact shape, not the GPU camp
 
 The public [Kaggle notebook](https://www.kaggle.com/code/lyftium/vllm-serving-benchmark-t4) is the recorded entry point. A comparable re-run needs two T4 GPUs, the pinned engine/software above, enough disk space for the selected model weights, and the instructions in [PROTOCOL.md](PROTOCOL.md).
 
-**Reproduction gap:** the benchmark driver/source, complete throughput prompt corpus, immutable model revisions, and exact warm-up procedure are not included. The CSV `commit` value `kaggle-v2` is a campaign label, not a source revision. The README therefore separates artifact inspection from a GPU re-run rather than presenting the latter as self-contained.
+The [published notebook](notebooks/vllm-serving-benchmark-t4.ipynb) contains the driver, generated prompt corpus, warm-up, and experiment matrix. [BENCHMARK.md](BENCHMARK.md) gives an exact offline-command example. Immutable Hugging Face model revisions are still not recorded, and the CSV `commit` value `kaggle-v2` is a campaign label rather than a source revision. The GPU campaign was not re-run for this publication.
 
 ## Limitations
 

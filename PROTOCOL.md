@@ -11,7 +11,7 @@ beyond [`results.json`](./results.json) and [`benchmark_results.csv`](./benchmar
 | Engine | vLLM `0.6.6.post1` (V0), isolated Python 3.12 venv |
 | Models | `Qwen/Qwen2.5-0.5B-Instruct` (+ AWQ), `Qwen/Qwen2.5-1.5B-Instruct` (+ AWQ) as recorded |
 | Campaign | **One** measured campaign (~20 min wall); one run per configuration |
-| Warm-up | As in the public notebook — do not compare cold first request to steady state without labeling |
+| Warm-up | One unrelated eight-token warm-up request before offline measurement; one unrelated warm-up request before each online level |
 
 ## Varied (recorded per row)
 
@@ -33,6 +33,6 @@ generated tok/s; TTFT / ITL / e2e percentiles where online; exact-match quality 
 
 ## Reproduce
 
-Re-run https://www.kaggle.com/code/lyftium/vllm-serving-benchmark-t4 (or equivalent) on comparable GPUs; keep model revision, max tokens, concurrency, and warm-up explicit. A second seed is a **new** campaign — do not silently overwrite these files.
+See [BENCHMARK.md](BENCHMARK.md) for the measured results and an exact single-cell command. The complete source is in `notebooks/vllm-serving-benchmark-t4.ipynb`; inspect its dependency and model download cells before choosing **Run All** on Kaggle. Keep model revision, max tokens, concurrency, and warm-up explicit. Immutable model revision hashes were not captured. A second seed is a **new** campaign — do not silently overwrite these files.
 
 Schema guard: `pytest -q tests/` (no GPU).
