@@ -4,9 +4,9 @@
 
 Which serving knobs actually move throughput and latency on commodity GPUs? This is one measured campaign: continuous batching, online concurrency, AWQ vs fp16, tensor parallel, and prefix caching.
 
-> **Start here:** [`docs/DEMO.md`](docs/DEMO.md) · [`results.json`](./results.json) · [`benchmark_results.csv`](./benchmark_results.csv) · [`PROTOCOL.md`](PROTOCOL.md)  
-> **Setup:** vLLM `0.6.6.post1` (V0) · Python 3.12 · Qwen2.5 0.5B / 1.5B (fp16 + AWQ) · 2× Tesla T4 on Kaggle  
-> **Limit:** one run per configuration — not multi-seed, not a customer SLO, not a cluster deploy
+**Start here:** [`docs/DEMO.md`](docs/DEMO.md) · [`results.json`](./results.json) · [`benchmark_results.csv`](./benchmark_results.csv) · [`PROTOCOL.md`](PROTOCOL.md).
+
+vLLM `0.6.6.post1` (V0), Python 3.12, Qwen2.5 0.5B / 1.5B (fp16 + AWQ), 2× Tesla T4 on Kaggle. One run per configuration — not multi-seed, not a customer SLO, not a cluster deploy.
 
 Notebook: [kaggle.com/code/lyftium/vllm-serving-benchmark-t4](https://www.kaggle.com/code/lyftium/vllm-serving-benchmark-t4)
 
