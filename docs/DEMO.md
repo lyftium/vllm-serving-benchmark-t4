@@ -1,32 +1,30 @@
-# Interview demo — vLLM T4 benchmark
+# Demo — vLLM T4 benchmark
 
-Walkthrough for a screener. Stick to artefacts in this repo.
+Inspect the published campaign. Re-running GPU cells needs a matching Kaggle / 2×T4 environment and [`PROTOCOL.md`](../PROTOCOL.md).
 
-## 90 seconds
+## Prerequisites
 
-1. **Question:** which serving knobs move throughput and latency together?
-2. Open the README **Problem / Verify / Status** table, then the ~35.5× batching line (digits from `results.json`).
-3. Point at [`PROTOCOL.md`](../PROTOCOL.md), [`results.json`](../results.json), [`benchmark_results.csv`](../benchmark_results.csv).
-4. **Limits out loud:** one Kaggle campaign on 2×T4; not multi-seed; not a customer cluster.
+- For inspection only: this repository clone
+- For re-run: 2× Tesla T4, vLLM `0.6.6.post1`, Python 3.12 (see PROTOCOL)
 
-## 10 minutes
+## Quick check
 
 ```bash
 pytest -q tests/
-# quote numbers from results.json — don’t re-run GPU unless you match the protocol
 ```
 
-| Minute | Show | Say |
-|---|---|---|
-| 0–2 | Headline + PROTOCOL | Fixed hardware, engine, models; one run per config |
-| 2–4 | `results.json` / CSV | Quote only recorded tok/s, TTFT/ITL, quality |
-| 4–6 | Batching vs single-seq | ~35.5× tok/s at max_num_seqs 128 vs 1 (0.5B fp16) |
-| 6–8 | AWQ vs fp16 | Quality and tok/s both move — measure both |
-| 8–9 | TP / prefix caching | Small-model PCIe TP can lose; prefix helps shared prompts |
-| 9–10 | Limits | Not multi-seed; don’t extrapolate to LLaVA / multi-node SLOs |
+**Expected:** tests pass.
 
-## Do not claim
+## Read results
 
-- Multi-seed confidence intervals
-- Customer-cluster or multi-node SLO numbers
-- Digits beyond `results.json` / CSV
+1. [`results.json`](../results.json) — full campaign + `derived_observations`
+2. [`benchmark_results.csv`](../benchmark_results.csv) — flat rows
+3. [`PROTOCOL.md`](../PROTOCOL.md) — hardware, engine, campaign shape
+
+Quote tok/s, TTFT, and quality only from those files.
+
+## Limitations
+
+- One run per configuration — exploratory, not multi-seed
+- 2× Tesla T4 Kaggle session — not a customer-cluster SLO
+- Do not extrapolate to larger VLMs or multi-node setups
