@@ -1,14 +1,14 @@
-# vLLM Serving Benchmark — throughput and latency on 2× Tesla T4
+# vLLM serving benchmark on 2× Tesla T4
 
 ![CI](https://github.com/lyftium/vllm-serving-benchmark-t4/actions/workflows/ci.yml/badge.svg)
 
-| | |
-|---|---|
-| **Problem** | Manifests and metrics alone do not show which serving settings actually matter under load. |
-| **Verify** | [`results.json`](./results.json) · [`benchmark_results.csv`](./benchmark_results.csv) · [`PROTOCOL.md`](PROTOCOL.md) · [`docs/DEMO.md`](docs/DEMO.md) |
-| **Status** | One Kaggle campaign, **one run per cell** — exploratory, not a multi-seed SLO, not a cluster deploy. |
+Serving configs are easy to argue about and annoying to measure. I ran one vLLM campaign (0.6.6.post1, Python 3.12) on two Tesla T4 GPUs and wrote the protocol next to the numbers.
 
-On 2× Tesla T4, continuous batching on Qwen2.5-0.5B fp16 moved generated tok/s from **144.5 → 5126.4** (~**35.5×**) as `max_num_seqs` went 1 → 128. Online concurrency, AWQ, and TP helped or hurt by batch size; the file has the rows. vLLM `0.6.6.post1`, Python 3.12. Notebook: [kaggle.com/code/lyftium/vllm-serving-benchmark-t4](https://www.kaggle.com/code/lyftium/vllm-serving-benchmark-t4).
+Continuous batching on Qwen2.5-0.5B fp16 moved generated tokens/s from 144.5 to 5126.4 when `max_num_seqs` went from 1 to 128. Two results I did not expect to be uniform: for the 1.5B model, AWQ was about 1.6× fp16 at one sequence and about 0.5× at 128 sequences; tensor parallelism across the two GPUs was slower than one GPU at the large batch, because the model is small relative to the PCIe cost. One run per cell — not a repeated trial and not a cluster capacity number.
+
+[`results.json`](./results.json) · [`benchmark_results.csv`](./benchmark_results.csv) · [`PROTOCOL.md`](PROTOCOL.md) · [`docs/DEMO.md`](docs/DEMO.md)
+
+Notebook: [kaggle.com/code/lyftium/vllm-serving-benchmark-t4](https://www.kaggle.com/code/lyftium/vllm-serving-benchmark-t4).
 
 Gateway: [agent-gateway-stack](https://github.com/lyftium/agent-gateway-stack). KServe packaging: [drawing-review-service](https://github.com/lyftium/drawing-review-service) `deploy/kserve/`.
 
