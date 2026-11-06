@@ -5,7 +5,7 @@ Walkthrough for a screener. Stick to artefacts in this repo.
 ## 90 seconds
 
 1. **Question:** which serving knobs move throughput and latency together?
-2. Open the README “Start here” block.
+2. Open the README headline (~35.5× batching from `results.json`).
 3. Point at [`PROTOCOL.md`](../PROTOCOL.md), [`results.json`](../results.json), [`benchmark_results.csv`](../benchmark_results.csv).
 4. **Limits out loud:** one Kaggle campaign on 2×T4; not multi-seed; not a customer cluster.
 
@@ -18,9 +18,9 @@ pytest -q tests/
 
 | Minute | Show | Say |
 |---|---|---|
-| 0–2 | Problem + PROTOCOL | Fixed hardware, engine, models; one run per config |
+| 0–2 | Headline + PROTOCOL | Fixed hardware, engine, models; one run per config |
 | 2–4 | `results.json` / CSV | Quote only recorded tok/s, TTFT/ITL, quality |
-| 4–6 | Batching vs single-seq | Throughput can dominate on the same GPU |
+| 4–6 | Batching vs single-seq | ~35.5× tok/s at max_num_seqs 128 vs 1 (0.5B fp16) |
 | 6–8 | AWQ vs fp16 | Quality and tok/s both move — measure both |
 | 8–9 | TP / prefix caching | Small-model PCIe TP can lose; prefix helps shared prompts |
 | 9–10 | Limits | Not multi-seed; don’t extrapolate to LLaVA / multi-node SLOs |
