@@ -5,7 +5,7 @@ Walkthrough for a screener. Stick to artefacts in this repo.
 ## 90 seconds
 
 1. **Question:** which serving knobs move throughput and latency together?
-2. Open the README headline (~35.5× batching from `results.json`).
+2. Open the README **Problem / Verify / Status** table, then the ~35.5× batching line (digits from `results.json`).
 3. Point at [`PROTOCOL.md`](../PROTOCOL.md), [`results.json`](../results.json), [`benchmark_results.csv`](../benchmark_results.csv).
 4. **Limits out loud:** one Kaggle campaign on 2×T4; not multi-seed; not a customer cluster.
 
