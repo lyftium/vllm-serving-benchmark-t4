@@ -1,14 +1,14 @@
-# vLLM serving benchmark — 2× Tesla T4
+# vLLM Serving Benchmark — throughput and latency on 2× Tesla T4
 
 ![CI](https://github.com/lyftium/vllm-serving-benchmark-t4/actions/workflows/ci.yml/badge.svg)
 
-I wanted numbers for the serving knobs people argue about — batching, concurrency, AWQ, tensor parallel, prefix cache — on GPUs you can actually rent.
+| | |
+|---|---|
+| **Problem** | Manifests and metrics alone do not show which serving settings actually matter under load. |
+| **Verify** | [`results.json`](./results.json) · [`benchmark_results.csv`](./benchmark_results.csv) · [`PROTOCOL.md`](PROTOCOL.md) · [`docs/DEMO.md`](docs/DEMO.md) |
+| **Status** | One Kaggle campaign, **one run per cell** — exploratory, not a multi-seed SLO, not a cluster deploy. |
 
-On one Kaggle campaign with 2× Tesla T4, continuous batching on Qwen2.5-0.5B fp16 moved generated tok/s from **144.5 → 5126.4** (~**35.5×**) when `max_num_seqs` went 1 → 128. Online, concurrency 1 → 32 raised tok/s a lot and TTFT with it. AWQ and TP helped or hurt depending on batch size; the file has the rows.
-
-[`results.json`](./results.json) · [`benchmark_results.csv`](./benchmark_results.csv) · [`PROTOCOL.md`](PROTOCOL.md) · [`docs/DEMO.md`](docs/DEMO.md)
-
-vLLM `0.6.6.post1`, Python 3.12, Qwen2.5 0.5B / 1.5B. **One run per cell** — exploratory, not a multi-seed SLO, not a cluster deploy. Notebook: [kaggle.com/code/lyftium/vllm-serving-benchmark-t4](https://www.kaggle.com/code/lyftium/vllm-serving-benchmark-t4).
+On 2× Tesla T4, continuous batching on Qwen2.5-0.5B fp16 moved generated tok/s from **144.5 → 5126.4** (~**35.5×**) as `max_num_seqs` went 1 → 128. Online concurrency, AWQ, and TP helped or hurt by batch size; the file has the rows. vLLM `0.6.6.post1`, Python 3.12. Notebook: [kaggle.com/code/lyftium/vllm-serving-benchmark-t4](https://www.kaggle.com/code/lyftium/vllm-serving-benchmark-t4).
 
 Gateway: [agent-gateway-stack](https://github.com/lyftium/agent-gateway-stack). KServe packaging: [drawing-review-service](https://github.com/lyftium/drawing-review-service) `deploy/kserve/`.
 
