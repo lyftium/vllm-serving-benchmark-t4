@@ -6,7 +6,7 @@ Serving optimizations do not all move in the same direction as load changes. I r
 
 For Qwen2.5-1.5B-Instruct, AWQ throughput was **1.61× fp16 at one sequence** (85.0 vs 52.7 generated tokens/s) and **0.50× at 128 sequences** (1,237.3 vs 2,485.1). On a separate 50-probe quality check at 128 sequences, exact match was 0.94 for AWQ and 0.98 for fp16. These are single-run measurements, not universal quantization results.
 
-[Benchmark report](BENCHMARK.md) · [Raw results](results.json) · [Flat CSV](benchmark_results.csv) · [Benchmark notebook](notebooks/vllm-serving-benchmark-t4.ipynb) · [Protocol](PROTOCOL.md)
+[Demo / inspection](docs/DEMO.md) · [Benchmark report](BENCHMARK.md) · [Raw results](results.json) · [Flat CSV](benchmark_results.csv) · [Benchmark notebook](notebooks/vllm-serving-benchmark-t4.ipynb) · [Protocol](PROTOCOL.md)
 
 ## Example
 
